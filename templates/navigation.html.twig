@@ -24,7 +24,12 @@
         </ul>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <li class="nav-item mr-md-2">
-                <a class="nav-link" href="#"><i class="fa fa-lock" aria-hidden="true"></i></a>
+                {% if not app.user %}
+                    <a class="nav-link" href="{{ path('authentification') }}"><i class="fa fa-lock" aria-hidden="true"></i></a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('admin_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                {% endif %}
+                
             </li>
         </ul>
             
