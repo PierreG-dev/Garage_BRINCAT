@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
@@ -30,8 +33,16 @@ class Admin implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Length(min="8", minMessage="Le mot de passe doit faire au moins 8 caractères.")
      */
     private $password;
+
+    /**
+     * 
+     *
+     * @Assert\EqualTo(propertyPath="password", message="Les deux mots de passe ne correspondent pas.")
+     */
+    public $confirm_password;
 
     public function getId(): ?int
     {
