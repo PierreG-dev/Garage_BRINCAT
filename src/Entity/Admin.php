@@ -12,8 +12,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
  * @UniqueEntity(
- *  fields: {"username"},
- *  message: "Le nom de l'administrateur existe déjà !"
+ *  fields= {"username"},
+ *  message= "Le nom de l'administrateur existe déjà !"
  * )
  */
 class Admin implements UserInterface

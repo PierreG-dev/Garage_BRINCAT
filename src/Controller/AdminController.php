@@ -65,4 +65,12 @@ class AdminController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+
+    /**
+     * @Route("/logout", name="admin_logout")
+     */
+    public function logout() {
+        
+    }
 }
