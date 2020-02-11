@@ -31,9 +31,11 @@ class AdminController extends AbstractController
 
 
     /**
-     * @Route("/admin/auth", name="authentification")
+     * @Route("/auth", name="authentification")
      */
     public function authentification() {
+
+
         return $this->render('admin/auth.html.twig', [
             'controller_name' => 'AdminController'
         ]);
