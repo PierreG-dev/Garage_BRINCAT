@@ -22,6 +22,7 @@ class CarType extends AbstractType
             ->add('equipments')
             ->add('warranty')
             ->add('thumbnail')
+            ->add('type')
         ;
     }
 
