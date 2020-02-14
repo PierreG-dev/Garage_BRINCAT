@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CarRepository")
@@ -62,7 +63,17 @@ class Car
     private $warranty;
 
     /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var [type]
+     */
+    private $filename;
+
+    /**
      * @ORM\Column(type="string", length=300)
+     * @var File
+     * @Vich\UploadableField(mapping="car_img", fileNameProperty="filename")
      */
     private $thumbnail;
 
@@ -207,4 +218,17 @@ class Car
 
         return $this;
     }
+
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    public function setFilename(string $filename): self
+    {
+        $this->filename = $filename;
+
+        return $this;
+    }
+    
 }
