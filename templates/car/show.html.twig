@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
-{% block title %}Car{% endblock %}
+{% block title %}Voiture{% endblock %}
 
 {% block body %}
-    <h1>Car</h1>
+    <h1>Voiture</h1>
 
     <table class="table">
         <tbody>
@@ -12,43 +12,43 @@
                 <td>{{ car.id }}</td>
             </tr>
             <tr>
-                <th>Color</th>
+                <th>Couleur</th>
                 <td>{{ car.Color }}</td>
             </tr>
             <tr>
-                <th>Brand</th>
+                <th>Marque</th>
                 <td>{{ car.brand }}</td>
             </tr>
             <tr>
-                <th>Model</th>
+                <th>Modèle</th>
                 <td>{{ car.model }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix</th>
                 <td>{{ car.price }}</td>
             </tr>
             <tr>
-                <th>Released</th>
+                <th>Année de mise en circulation</th>
                 <td>{{ car.released ? car.released|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>EnergyType</th>
+                <th>Energie</th>
                 <td>{{ car.energyType }}</td>
             </tr>
             <tr>
-                <th>Mileage</th>
+                <th>Kilomètrage</th>
                 <td>{{ car.mileage }}</td>
             </tr>
             <tr>
-                <th>Equipments</th>
+                <th>Equipements</th>
                 <td>{{ car.equipments }}</td>
             </tr>
             <tr>
-                <th>Warranty</th>
+                <th>Garantie</th>
                 <td>{{ car.warranty }}</td>
             </tr>
             <tr>
-                <th>Thumbnail</th>
+                <th>Image</th>
                 <td><img src="/images/properties/{{ car.filename }}" alt=""></td>
             </tr>
             <tr>
@@ -58,9 +58,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('car_index') }}">back to list</a>
+    <a href="{{ path('car_index') }}">Retourner à la liste</a>
 
-    <a href="{{ path('car_edit', {'id': car.id}) }}">edit</a>
+    <a href="{{ path('car_edit', {'id': car.id}) }}">Modifier</a>
 
     {{ include('car/_delete_form.html.twig') }}
 {% endblock %}
