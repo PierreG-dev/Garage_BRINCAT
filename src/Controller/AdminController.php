@@ -9,6 +9,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
+
+/**
+ * @Route("/admin")
+ */
 
 class AdminController extends AbstractController
 {
@@ -20,7 +26,8 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/", name="admin")
      */
     public function index()
     {
@@ -44,7 +51,8 @@ class AdminController extends AbstractController
 
     
     /**
-     * @Route("/admin/registration", name="admin_registration")
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/registration", name="admin_registration")
      */
     public function registration(Request $request, UserPasswordEncoderInterface $encoder) {
         $admin = new Admin();
@@ -56,9 +64,11 @@ class AdminController extends AbstractController
             $hash = $encoder->encodePassword($admin, $admin->getPassword());
 
             $admin->setPassword($hash);
+            $admin->setRoles(['ROLE_ADMIN']);
 
             $this->manager->persist($admin);
             $this->manager->flush();
+            return $this->redirectToRoute('authentification');
         }
         
         return $this->render('admin/registration.html.twig', [
@@ -68,6 +78,7 @@ class AdminController extends AbstractController
 
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/logout", name="admin_logout")
      */
     public function logout() {

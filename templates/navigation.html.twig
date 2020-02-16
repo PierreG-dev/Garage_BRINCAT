@@ -1,14 +1,23 @@
+{% if app.user %}
+<div class="overNav container-fluid" style="background-color: #009432;">
+{% else %}
 <div class="overNav container-fluid bg-primary">
+{% endif %}
     <div class="row" style="height: 10vh;">
         <div class="col-5" style="margin:auto">
             <a class="navbar-home" href="{{ path('home') }}"><h1 class="text-center" style="font-size: 2.1rem;">Garage <span style="font-weight: bold">BRINCAT</span></h1></a>
         </div>
         <div class="col-7 text-white" style="margin: auto;">
-            <div class="row" >
-                <div class="col-4">sarlgaragebrincat@orange.fr</div>
-                <div class="col-4">Mon–Sat: 7:00–19:00</div>
-                <div class="col-4">05 63 32 33 78</div>
-            </div>
+            {% if not app.user %}
+                <div class="row">
+                    <div class="col-4">sarlgaragebrincat@orange.fr</div>
+                    <div class="col-4">Mon–Sat: 7:00–19:00</div>
+                    <div class="col-4">05 63 32 33 78</div>
+                </div>
+            {% else %}
+                <h2 style="text-align: center; color: #efefef; text-transform: capitalize;">Bienvenue <span style="font-weight: bold;">{{ app.user.username }}</span></h2>
+            {% endif %}
+            
         </div>
     </div>
 </div>
@@ -38,14 +47,20 @@
             </li>
         </ul>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            {% if app.user %}
+            <li>
+                <abbr title="Administration"><a class="nav-link" href="{{ path('admin') }}"><i class="fa fa-wrench" aria-hidden="true"></i></a></abbr>
+            </li>
+            {% endif %}
             <li class="nav-item mr-md-2">
                 {% if not app.user %}
-                    <a class="nav-link" href="{{ path('authentification') }}"><i class="fa fa-lock" aria-hidden="true"></i></a>
+                    <abbr title="Se connecter"><a class="nav-link" href="{{ path('authentification') }}"><i class="fa fa-lock" aria-hidden="true"></i></a></abbr>
                 {% else %}
-                    <a class="nav-link" href="{{ path('admin_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    <abbr title="Se déconnecter"><a class="nav-link" href="{{ path('admin_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></abbr>
                 {% endif %}
-                
             </li>
+            
+            
         </ul>
             
         

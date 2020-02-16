@@ -39,8 +39,8 @@
                 <td><img src="/images/properties/{{ car.filename }}" alt="" style="max-width: 60px;height: auto;"></td>
                 <td>{{ car.type }}</td>
                 <td>
-                    <a href="{{ path('car_show', {'id': car.id}) }}">show</a>
-                    <a href="{{ path('car_edit', {'id': car.id}) }}">edit</a>
+                    <a href="{{ path('car_show', {'id': car.id}) }}" class="btn btn-info">Detail</a>
+                    <a href="{{ path('car_edit', {'id': car.id}) }}" class="btn btn-success">Modifier</a>
                 </td>
             </tr>
         {% else %}
