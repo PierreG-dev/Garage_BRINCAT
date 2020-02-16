@@ -1,15 +1,24 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Voiture{% endblock %}
+{% block title %}Véhicule n°{{ car.id }}{% endblock %}
 
 {% block body %}
-    <h1>Voiture</h1>
+    <h1>Véhicule n°{{ car.id }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ car.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{% if car.type == "Neuf" %}
+                        <span class="sticker bg-success text-white">{{ car.type }}</span>
+                    {% else %}
+                        <span class="sticker bg-primary text-white">{{ car.type }}</span>
+                    {% endif %}
+                </td>
             </tr>
             <tr>
                 <th>Couleur</th>
@@ -49,11 +58,7 @@
             </tr>
             <tr>
                 <th>Image</th>
-                <td><img src="/images/properties/{{ car.filename }}" alt=""></td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{{ car.type }}</td>
+                <td><img src="/images/properties/{{ car.filename }}" alt="" style="max-width: 600px;height:auto;"></td>
             </tr>
         </tbody>
     </table>

@@ -1,9 +1,9 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Modification voiture{% endblock %}
+{% block title %}Modification véhicule n°{{ car.id }}{% endblock %}
 
 {% block body %}
-    <h1>Modifier la voiture</h1>
+    <h1>Modifier la véhicule n°{{ car.id }}</h1>
 
     {{ include('car/_form.html.twig', {'button_label': 'Update'}) }}
 

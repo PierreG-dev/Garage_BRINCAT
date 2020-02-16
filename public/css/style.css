@@ -31,3 +31,9 @@ header {
     color: #373737;
     text-decoration: none;
 }
+
+/* Etiquettes */
+.sticker {
+    padding: 3px;
+    border-radius: 5px;
+}

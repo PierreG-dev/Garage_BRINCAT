@@ -31,7 +31,7 @@
                 <td>{{ car.brand }}</td>
                 <td>{{ car.model }}</td>
                 <td>{{ car.price }}</td>
-                <td>{{ car.released ? car.released|date('Y-m-d') : '' }}</td>
+                <td>{{ car.released ? car.released|date('d-m-Y') : '' }}</td>
                 <td>{{ car.energyType }}</td>
                 <td>{{ car.mileage }}</td>
                 <td>{{ car.equipments }}</td>
@@ -45,11 +45,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="13">no records found</td>
+                <td colspan="13">Aucun véhicule enregistré !</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('car_new') }}" class="btn btn-info">Create new</a>
+    <a href="{{ path('car_new') }}" class="btn btn-info">Ajouter un véhicule</a>
 {% endblock %}
