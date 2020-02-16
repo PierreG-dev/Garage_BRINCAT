@@ -13,7 +13,7 @@ body {
 header {
     width: 100vw;
     height: 600px;
-    background-image: url(../res/header-3.jpg);
+    background-image: url(../res/bg-header.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
