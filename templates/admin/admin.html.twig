@@ -4,19 +4,31 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; height: 50vh;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .buttonList {
+        height: 40vh;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    body {
+        background: url("{{ asset('res/admin_body.svg') }}");
+        background-size: cover;
+    }
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1 class="text-center mt-5">Menu</h1>
 
     <section class="container m-auto">
-        <ul>
-            <li class="btn"></li>
-            <li class="btn"></li>
-            <li class="btn"></li>
-            <li class="btn"></li>
+        <ul class="buttonList mt-5">
+            <li><a href="{{ path('car_index') }}" class="btn btn-lg btn-success">Gestion des véhicules</a></li>
+            <li><a href="{{ path('admin_registration') }}" class="btn btn-lg btn-info">Créer un nouvel administrateur</a></li>
+            <li><a href="{{ path('admin_logout') }}" class="btn btn-lg btn-danger">Se déconnecter</a></li>
+            <li><abbr title="En développement"><a href="" class="btn btn-lg btn-warning disabled">Messagerie</a></abbr></li>
         </ul>
     </section>
 </div>

@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'PT Sans', sans-serif;
+    
 }
 
 body {
-    /*background: red;*/
+    font-family: 'PT Sans', sans-serif;
     
 }
 

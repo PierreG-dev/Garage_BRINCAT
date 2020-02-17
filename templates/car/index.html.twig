@@ -3,7 +3,14 @@
 {% block title %}Liste des véhicules{% endblock %}
 
 {% block body %}
-    <h1 style="margin-top: 3vh; text-align: center;">Liste des véhicules</h1>
+
+    <style>
+        body {
+            background: url("{{ asset('res/admin_body_dark.svg') }}");
+            background-size: cover;
+        }
+    </style>
+    <h1 style="margin-top: 3vh; text-align: center; color: #fff">Liste des véhicules</h1>
 
     <table class="table table-dark" style="min-height: 700px; margin-top: 4vh">
         <thead>
@@ -34,7 +41,7 @@
                 <td>{{ car.released ? car.released|date('d-m-Y') : '' }}</td>
                 <td>{{ car.energyType }}</td>
                 <td>{{ car.mileage }}</td>
-                <td style="font-size: 0.6rem; font-weight: bold;">{{ car.equipments }}</td>
+                <td style="font-size: 0.8rem; font-weight: bold;">{{ car.equipments | slice(0,20) }}...</td>
                 <td>{{ car.warranty }}</td>
                 <td><img src="/images/properties/{{ car.filename }}" alt="" style="max-width: 60px;height: auto;"></td>
                 <td>{{ car.type }}</td>
