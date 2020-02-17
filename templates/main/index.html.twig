@@ -1,9 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}SARL Garage BRINCAT{% endblock %}
 
 {% block body %}
-<header>
-    
+<header class="p-5">
+    <div class="container ml-2" style="margin-top: 60px !important;">
+        <div class="col p-3" style="height: 250px; font-family: 'PT Sans', sans-serif;">
+            <h2 class="row-4 text-light mb-5" style="font-size: 2.7rem; font-weight: bold">La nouvelle 500 est arrivée</h2>
+            <div class="row-4 text-light mt-1 mb-3" style="font-size: 1.6rem; font-weight: 200">Venez la découvrir dès maintenant dans <br>nos vitrines</div>
+            <a class="btn btn-outline-light btn-design" href="{{ path('about') }}">EN SAVOIR PLUS</a>
+        </div>
+    </div>
 </header>
+
+<section class="container-fluid bg-light p-4">
+    <h2 class="ml-5">RECHERCHE</h2>
+    <hr class="bg-success ml-5" style="border-width: 3px; width: 50px">
+    <container class="m-auto">
+        <div class="row">
+            <div class="col-3"></div>
+            <a href="{{ path('neuf') }}" class="btn btn-success btn-design col-2 m-3">UN VEHICULE NEUF</a>
+            <a href="{{ path('occasion') }}" class="btn btn-info btn-design col-2 m-3">UN VEHICULE OCCASION</a>
+        </div>
+    </container>
+</section>
 {% endblock %}
