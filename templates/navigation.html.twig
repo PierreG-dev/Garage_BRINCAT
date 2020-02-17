@@ -1,11 +1,11 @@
 {% if app.user %}
 <div class="overNav container-fluid" style="background-color: #009432;">
 {% else %}
-<div class="overNav container-fluid bg-primary">
+<div class="overNav container-fluid bg-dark">
 {% endif %}
     <div class="row" style="height: 10vh;">
         <div class="col-5" style="margin:auto">
-            <a class="navbar-home text-center" href="{{ path('home') }}"x"><h1 style="font-size: 2.1rem;">Garage <span style="font-weight: bold">BRINCAT</span></h1></a>
+            <a class="navbar-home text-center text-white" href="{{ path('home') }}"><h1 style="font-size: 2.1rem;">Garage <span style="font-weight: bold">BRINCAT</span></h1></a>
         </div>
         <div class="col-7 text-white" style="margin: auto;">
             {% if not app.user %}
