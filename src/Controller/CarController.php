@@ -38,6 +38,10 @@ class CarController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            if($car->getFilename() == null) {
+                $car->setFilename('no image');
+                $car->setUpdatedAt(new \DateTime('now'));
+            }
             $entityManager->persist($car);
             $entityManager->flush();
 

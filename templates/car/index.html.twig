@@ -1,11 +1,11 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Car index{% endblock %}
+{% block title %}Liste des véhicules{% endblock %}
 
 {% block body %}
-    <h1 style="margin-top: 5vh; text-align: center;">Car index</h1>
+    <h1 style="margin-top: 3vh; text-align: center;">Liste des véhicules</h1>
 
-    <table class="table table-dark" style="min-height: 700px; margin-top: 10vh">
+    <table class="table table-dark" style="min-height: 700px; margin-top: 4vh">
         <thead>
             <tr>
                 <th>Id</th>
@@ -34,13 +34,16 @@
                 <td>{{ car.released ? car.released|date('d-m-Y') : '' }}</td>
                 <td>{{ car.energyType }}</td>
                 <td>{{ car.mileage }}</td>
-                <td>{{ car.equipments }}</td>
+                <td style="font-size: 0.6rem; font-weight: bold;">{{ car.equipments }}</td>
                 <td>{{ car.warranty }}</td>
                 <td><img src="/images/properties/{{ car.filename }}" alt="" style="max-width: 60px;height: auto;"></td>
                 <td>{{ car.type }}</td>
                 <td>
-                    <a href="{{ path('car_show', {'id': car.id}) }}" class="btn btn-info">Detail</a>
-                    <a href="{{ path('car_edit', {'id': car.id}) }}" class="btn btn-success">Modifier</a>
+                    <div class="row">
+                        <div class="col-6"><a href="{{ path('car_show', {'id': car.id}) }}" class="btn btn-info">Detail</a></div>
+                        <div class="col-6"><a href="{{ path('car_edit', {'id': car.id}) }}" class="btn btn-success">Modifier</a></div>
+                    </div>
+                    
                 </td>
             </tr>
         {% else %}

@@ -49,7 +49,7 @@ class AdminController extends AbstractController
     }
 
 
-    
+
     /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/registration", name="admin_registration")
