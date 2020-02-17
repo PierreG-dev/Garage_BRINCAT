@@ -23,6 +23,23 @@ header {
     box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
 
+.separation-div {
+    height: 20vh;
+    background: fixed;
+    background-size: cover;
+    background-position: center;
+    background-origin: center;
+    filter: contrast(80%);
+}
+
+.first {
+    background-image: url(../res/header_between_4.jpg);
+}
+
+.ul-row {
+    list-style: none;
+}
+
 /* NAVBAR */
 .navbar-home {
     display: block;
@@ -48,4 +65,41 @@ header {
 .sticker {
     padding: 3px;
     border-radius: 5px;
+}
+
+/* SERVICES */
+.service-card {
+    height: 250px;
+    width: 350px;
+    border-radius: 2px;
+    background-size: cover;
+    filter: contrast(75%);
+}
+
+.service-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 350px;
+    height: 50px;
+    background: rgb(25, 175, 25);
+}
+
+#service_1{
+    background-image: url(../res/service_expertise.jpg);
+}
+#service_2{
+    background-image: url(../res/service_reparation.jpg);
+}
+#service_3{
+    background-image: url(../res/service_depannage.jpg);
+    filter: contrast(65%);
+}
+#service_4{
+    background-image: url(../res/service_vente.jpg);
+}
+#service_5{
+    background-image: url(../res/service_revision.jpg);
+}
+#service_6{
+    background-image: url(../res/service_garantie.jpg);
 }
