@@ -3,14 +3,25 @@
 {% block title %}Modification véhicule n°{{ car.id }}{% endblock %}
 
 {% block body %}
-    <h1>Modifier la véhicule n°{{ car.id }}</h1>
+
+    <style>
+        body {
+            background: url("{{ asset('res/admin_body_green.svg') }}");
+            background-size: cover;
+            padding-bottom: 25px;
+        }
+    </style>
+
+    <h1 class="text-center text-white mt-4">Modifier le véhicule n°{{ car.id }}</h1>
 
     {{ include('car/_form.html.twig', {'button_label': 'Update'}) }}
 
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <a href="{{ path('car_index') }}">Retourner à la liste</a>
+            <div class="container m-auto bg-light">
+                <a href="{{ path('car_index') }}" class="btn btn-info mt-2 mb-2">Retourner à la liste</a>
+            </div>
             {{ include('car/_delete_form.html.twig') }}
         </div>
         <div class="col-2"></div>

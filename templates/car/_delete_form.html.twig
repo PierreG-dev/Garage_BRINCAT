@@ -1,5 +1,8 @@
-<form method="post" action="{{ path('car_delete', {'id': car.id}) }}" onsubmit="return confirm('Voulez vous vraiment supprimer cet élément ?');">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ car.id) }}">
-    <button class="btn btn-danger">Supprimer</button>
-</form>
+<div class="container m-auto bg-light" style="border-radius: 0 0 5px 5px; padding-bottom: 15px">
+    <form method="post" action="{{ path('car_delete', {'id': car.id}) }}"
+        onsubmit="return confirm('Voulez vous vraiment supprimer cet élément ?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ car.id) }}">
+            <button class="btn btn-danger text-center">Supprimer</button>
+    </form>
+</div>

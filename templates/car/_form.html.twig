@@ -1,4 +1,6 @@
-{{ form_start(form) }}
+<div class="container m-auto bg-light" style="border-radius: 5px 5px 0 0; padding-top: 10px">
+    {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
-{{ form_end(form) }}
+    {{ form_end(form) }}
+</div>

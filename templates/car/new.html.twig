@@ -3,9 +3,19 @@
 {% block title %}Ajouter une voiture{% endblock %}
 
 {% block body %}
-<h1>Ajouter une voiture</h1>
+
+<style>
+    body {
+        background: url("{{ asset('res/admin_body_green.svg') }}");
+        background-size: cover;
+    }
+</style>
+
+<h1 class="text-center text-white">Ajouter une voiture</h1>
 
     {{ include('car/_form.html.twig') }}
 
-    <a href="{{ path('car_index') }}">Retourner à la liste</a>
+    <div class="container m-auto">
+        <a href="{{ path('car_index') }}" class="btn btn-info mt-2">Retourner à la liste</a>
+    </div>
 {% endblock %}
