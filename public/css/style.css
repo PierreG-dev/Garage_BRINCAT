@@ -6,7 +6,7 @@
 
 body {
     font-family: 'PT Sans', sans-serif;
-    
+    min-height: 100vh;
 }
 
 /* HEADER */
@@ -102,4 +102,10 @@ header {
 }
 #service_6{
     background-image: url(../res/service_garantie.jpg);
+}
+
+
+/* CAR DISPLAY */
+.car-mini {
+    
 }

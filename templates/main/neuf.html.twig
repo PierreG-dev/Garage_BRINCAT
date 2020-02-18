@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SARL Garage BRINCAT{% endblock %}
+
+{% block body %}
+
+<style>
+    body {
+        background: url("{{ asset('res/Liquid-Cheese.svg') }}");
+        background-size: cover;
+    }
+</style>
+
+
+<div class="container-fluid p-5" style="min-height: 70vh;">
+    <div class="row">
+        {% for car in cars %}
+        <div class="col-md-3 col-lg-3 col-sm-12 mb-5">
+            <div class="card m-auto" style="width: 18rem;">
+                <img class="card-img-top" src="/images/properties/{{ car.filename }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                    <p class="card-text">{{ car.Color }}<br>{{ car.price }} € HT<br>{{ car.energyType }}</p>
+                    <a href="{{ path('detail', {'id': car.id}) }}" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        RIEN A AFFICHER
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
