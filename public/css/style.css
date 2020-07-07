@@ -18,9 +18,25 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     filter: contrast(75%);
+    padding: 3rem;
     -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
+}
+
+header h2 {
+    font-weight: bold;
+    font-size: 2.7rem;
+    margin-bottom: 3rem;
+}
+
+#header_content {
+    margin-top: 60px !important;
+}
+#header_text {
+    font-size: 1.6rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
 }
 
 .separation-div {
@@ -30,6 +46,9 @@ header {
     background-position: center;
     background-origin: center;
     filter: contrast(80%);
+    -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
 
 .first {
@@ -38,6 +57,31 @@ header {
 
 .ul-row {
     list-style: none;
+}
+
+@media all and (max-width: 768px) {
+    header {
+        height: 250px;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    header h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem;
+    }
+
+    #header_content {
+        margin-top: 0 !important;
+    }
+    #header_text {
+        font-size: 1rem;
+        margin-bottom: 0.7rem;
+    }
+    #header_btn {
+    font-size: 1rem !important;
+    margin-top: 0;
+}
 }
 
 /* NAVBAR */
@@ -55,11 +99,21 @@ header {
     color: #373737;
     text-decoration: none;
 }
+@media all and (max-width: 768px) {
+    .overNav {
+        display: none;
+    }
+}
 
 /* BOUTONS */
 .btn-design {
     font-size: 1.5rem;
     border-radius: 0;
+}
+@media all and (max-width: 768px) {
+    .btn-design {
+        margin-top: 10px;
+    }
 }
 /* ETIQUETTES */
 .sticker {
@@ -68,17 +122,22 @@ header {
 }
 
 /* SERVICES */
+#services_container {
+    padding: 0 18%;
+}
+
 .service-card {
     height: 250px;
     width: 350px;
     border-radius: 2px;
     background-size: cover;
     filter: contrast(75%);
+    margin-top: 20px;
 }
 
 .service-bottom {
     position: absolute;
-    bottom: 0;
+    top: 100%;
     width: 350px;
     height: 50px;
     background: rgb(25, 175, 25);
@@ -104,6 +163,26 @@ header {
     background-image: url(../res/service_garantie.jpg);
 }
 
+@media all and (max-width: 768px) {
+    .service-card {
+        width: 200px;
+        height: 150px;
+    }
+
+    .service-bottom {
+        width: 200px;
+        height: auto;
+    }
+    #services_container {
+        padding: 0 8%;
+    }
+    .service-card h2 {
+        font-size: 1.6rem;
+    }
+    #service_5 {
+    margin-top: 55px;
+}
+}
 
 /* CAR DISPLAY */
 .car-mini {
