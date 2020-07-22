@@ -6,83 +6,90 @@
 
     <style>
         body {
-            background: url("{{ asset('res/admin_body_dark.svg') }}");
+            background: white;
             background-size: cover;
             padding-bottom: 25px;
         }
     </style>
 
 
-    <h1 class="text-center text-white">Véhicule n°{{ car.id }}</h1>
-
-    <table class="table table-dark">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ car.id }}</td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{% if car.type == "Neuf" %}
+    <h1 class="text-center text-dark">Véhicule n°{{ car.id }}</h1>
+    <div class="container m-auto">
+        <table class="table table-light">
+            <tbody>
+                <tr>
+                    <th>Image</th>
+                    <td><img src="/images/properties/{{ car.filename }}" alt="" style="max-width: 600px;height:auto;"></td>
+                </tr>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ car.id }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{% if car.type == "Neuf" %}
                         <span class="sticker bg-success text-white">{{ car.type }}</span>
-                    {% else %}
+                        {% else %}
                         <span class="sticker bg-primary text-white">{{ car.type }}</span>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>Couleur</th>
-                <td>{{ car.Color }}</td>
-            </tr>
-            <tr>
-                <th>Marque</th>
-                <td>{{ car.brand }}</td>
-            </tr>
-            <tr>
-                <th>Modèle</th>
-                <td>{{ car.model }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ car.price }}</td>
-            </tr>
-            <tr>
-                <th>Année de mise en circulation</th>
-                <td>{{ car.released ? car.released|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Energie</th>
-                <td>{{ car.energyType }}</td>
-            </tr>
-            <tr>
-                <th>Kilomètrage</th>
-                <td>{{ car.mileage }}</td>
-            </tr>
-            <tr>
-                <th>Equipements</th>
-                <td>{{ car.equipments }}</td>
-            </tr>
-            <tr>
-                <th>Garantie</th>
-                <td>{{ car.warranty }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="/images/properties/{{ car.filename }}" alt="" style="max-width: 600px;height:auto;"></td>
-            </tr>
-        </tbody>
-    </table>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Couleur</th>
+                    <td>{{ car.Color }}</td>
+                </tr>
+                <tr>
+                    <th>Marque</th>
+                    <td>{{ car.brand }}</td>
+                </tr>
+                <tr>
+                    <th>Modèle</th>
+                    <td>{{ car.model }}</td>
+                </tr>
+                <tr>
+                    <th>Prix</th>
+                    <td>{{ car.price }}</td>
+                </tr>
+                <tr>
+                    <th>Année de mise en circulation</th>
+                    <td>{{ car.released ? car.released|date('Y-m-d') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Energie</th>
+                    <td>{{ car.energyType }}</td>
+                </tr>
+                <tr>
+                    <th>Kilomètrage</th>
+                    <td>{{ car.mileage }}</td>
+                </tr>
+                <tr>
+                    <th>Equipements</th>
+                    <td>{{ car.equipments }}</td>
+                </tr>
+                <tr>
+                    <th>Garantie</th>
+                    <td>{{ car.warranty }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    
-
-        <a href="{{ path('car_index') }}" class="btn btn-info">Retourner à la liste</a>
         
-        <a href="{{ path('car_edit', {'id': car.id}) }}" class="btn btn-success">Modifier</a>
 
         <form method="post" action="{{ path('car_delete', {'id': car.id}) }}"
-            onsubmit="return confirm('Voulez vous vraiment supprimer cet élément ?');" class="mt-2">
+            onsubmit="return confirm('Voulez vous vraiment supprimer cet élément ?');" class="mb-2">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ car.id) }}">
             <button class="btn btn-danger text-center">Supprimer</button>
         </form>
+        
+        <a href="{{ path('car_edit', {'id': car.id}) }}" class="btn btn-success">Modifier</a>
+        <a href="{{ path('car_index') }}" class="btn btn-info">Retourner à la liste</a>
+        
+        
+    </div>
+    
+
+    
+
+        
 {% endblock %}

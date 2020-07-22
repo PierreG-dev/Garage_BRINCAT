@@ -6,20 +6,20 @@
 
     <style>
         body {
-            background: url("{{ asset('res/admin_body_dark.svg') }}");
+            background: white;
             background-size: cover;
             padding-bottom: 25px;
         }
     </style>
 
-    <h1 class="text-center text-white mt-4">Modifier le véhicule n°{{ car.id }}</h1>
+    <h1 class="text-center text-dark mt-4">Modifier le véhicule n°{{ car.id }}</h1>
 
-    {{ include('car/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('car/_form.html.twig', {'button_label': 'Terminé'}) }}
 
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <div class="container m-auto bg-light">
+            <div class="container m-auto">
                 <a href="{{ path('car_index') }}" class="btn btn-info mt-2 mb-2">Retourner à la liste</a>
             </div>
             {{ include('car/_delete_form.html.twig') }}

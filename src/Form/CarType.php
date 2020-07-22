@@ -40,6 +40,7 @@ class CarType extends AbstractType
                 'attr' => ['placeholder' => 'Prix du véhicule']
             ])
             ->add('released', DateType::class, [
+                'label' => 'Mise en circulation',
                 'format' => 'dd-MM-yyyy',
                 'years' => range(1960, 2020)
             ])
