@@ -29,7 +29,7 @@
 
     img {
         filter: contrast(90%);
-        height:300px;
+        height: 300px;
         border-radius: 15px;
 
         -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.10);
@@ -47,11 +47,19 @@
     }
 </style>
 
-<div class="info-box-notification">
-    <p>
-        Besoin d'informations ?
-        <i class="fa fa-phone" aria-hidden="true"></i>
-    </p>
+<div class="info-box-notification text-light">
+    <h4 class="text-center mb-4">Besoin d'informations ?</h4>
+
+    <h5 style="font-size: 1rem;text-align: center; text-align: center;">Téléphone</h5>
+    <hr style="border-color: rgba(255,255,255,0.2); margin-top: -5px;">
+    <i class="fa fa-phone text-center d-block" aria-hidden="true">+33 5 63 32 33 78</i>
+
+    <h5 style="font-size: 1rem;text-align: center;margin-top: 20px">E-mail</h5>
+    <hr style="border-color: rgba(255,255,255,0.2); margin-top: -5px;">
+    <a href="mailto:sarlgaragebrincat@orange.fr" style="text-decoration-color: white; color: white;font-size: 1rem; text-align: center; display: block;">
+        sarlgaragebrincat@orange.fr
+    </a>
+
 
 </div>
 
@@ -77,17 +85,17 @@
                     {{ car.released ? car.released|date('d/m/Y') : '' }}</li>
                 <li><span style="font-weight: bold;">Energie</span>: {{ car.energyType }}</li>
                 <li><span style="font-weight: bold;">Kilomètrage</span>: {{car. mileage}} Km</li>
-                <li><span style="font-weight: bold;">Durée de garantie</span>: {{car.warranty}}</li>
+                <li><span style="font-weight: bold;">Garantie</span>: {{car.warranty}}</li>
             </ul>
         </div>
         <div class="col-6 p-5">
-                    <h3>Equipements</h3>
-                    {% for equipment in equipments %}
-                    <tr>
-                        <hr class="w-100">
-                        <p>{{equipment}}</p>
-                    </tr>
-                    {% endfor %}
+            <h3>Equipements</h3>
+            {% for equipment in equipments %}
+            <tr>
+                <hr class="w-100">
+                <p>{{equipment}}</p>
+            </tr>
+            {% endfor %}
         </div>
     </div>
 </div>
