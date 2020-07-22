@@ -6,61 +6,88 @@
 
 <style>
     body {
-        background: url("{{ asset('res/Liquid-Cheese.svg') }}");
+        background: rgb(236, 236, 236);
         background-size: cover;
     }
+
     h1 {
         font-size: 3.4rem;
         border-radius: 0 0 5px 5px;
         position: absolute;
         z-index: 5;
-        width: 20vw;
-        margin: 0 40vw;
     }
+
     .table {
         width: 35%;
         border-radius: 15px;
     }
+
     th {
         font-size: 1.5rem;
         font-size: bold;
     }
+
+    img {
+        filter: contrast(90%);
+        height:300px;
+        border-radius: 15px;
+
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.10);
+        -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.10);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.10);
+    }
+
+    #caracteristics {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        margin-left: 138px;
+    }
 </style>
 
-<div class="container-fluid">
-    <div class="row">
-        <h1 class="text-center text-white bg-dark">{{ car.brand }} {{ car.model }}</h1>
-        <div class="col-md-12 col-lg-12 col-sm-12 p-0">
-            <img src="{{ asset("images/properties") }}/{{ car.filename }}" alt="" style="filter: contrast(90%); width:70%; margin-left: 15%;">
-        </div>
+<div class="info-box-notification">
+    <p>
+        Besoin d'informations ?
+        <i class="fa fa-phone" aria-hidden="true"></i>
+    </p>
 
-        <div class="col-md-6 col-lg-6 col-sm-12 text-white p-5">
-            <ul style="list-style: none;display: flex;flex-direction: column;justify-content: space-around; height: 100%; float: right;">
-                {% if car.type == 'Neuf' %}
-                <li><span style="font-weight: bold;">Véhicule</span style="font-weight: bold;"> <span class="sticker bg-success">neuf</span></li>
-                {% else %}
-                <li><span style="font-weight: bold;">Véhicule</span> <span class="sticker bg-info">d'occasion</span></li>
-                {% endif %}
+</div>
+
+<div class="container" style="color: #373737">
+    <div class="row">
+        <h1 class="text-center text-dark col-md-12 col-lg-12 col-sm-12">{{ car.brand }} {{ car.model }}</h1>
+        <div class="col-md-12 col-lg-12 col-sm-12 p-0 d-flex justify-content-center">
+            <img src="{{ asset("images/properties") }}/{{ car.filename }}" alt="{{ car.brand }} {{ car.model }}">
+        </div>
+        {% if car.type == 'Neuf' %}
+        <h2 class="col-12 text-center mt-4"><span style="font-weight: bold;">Véhicule</span style="font-weight: bold;">
+            <span class="sticker bg-success text-light">neuf</span></h2>
+        {% else %}
+        <h2 class="col-12 text-center mt-4"><span style="font-weight: bold;">Véhicule</span> <span
+                class="sticker bg-info text-light">occasion</span></h2>
+        {% endif %}
+        <div class="col-md-6 col-lg-6 col-sm-12 text-dark p-5">
+            <h3 class="text-center">Caractéristiques</h3>
+            <ul id="caracteristics">
                 <li><span style="font-weight: bold;">Couleur</span>: {{ car.color }}</li>
                 <li><span style="font-weight: bold;">Prix</span>: {{car.price}}€ HT</li>
-                <li><span style="font-weight: bold;">Date de mise en circulation</span>: {{ car.released ? car.released|date('d-m-Y') : '' }}</li>
+                <li><span style="font-weight: bold;">Date de mise en circulation</span>:
+                    {{ car.released ? car.released|date('d/m/Y') : '' }}</li>
                 <li><span style="font-weight: bold;">Energie</span>: {{ car.energyType }}</li>
-                <li><span style="font-weight: bold;">Kilomètrage</span>: {{car. mileage}}</li>
+                <li><span style="font-weight: bold;">Kilomètrage</span>: {{car. mileage}} Km</li>
                 <li><span style="font-weight: bold;">Durée de garantie</span>: {{car.warranty}}</li>
             </ul>
         </div>
         <div class="col-6 p-5">
-            <table class="table table-dark text-center">
-                <tbody>
-                    <th>EQUIPEMENTS</th>
+                    <h3>Equipements</h3>
                     {% for equipment in equipments %}
                     <tr>
-                        <td>{{equipment}}</td>
+                        <hr class="w-100">
+                        <p>{{equipment}}</p>
                     </tr>
-        
                     {% endfor %}
-                </tbody>
-            </table>
         </div>
     </div>
 </div>

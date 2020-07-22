@@ -123,6 +123,10 @@ header h2 {
 .sticker {
     padding: 3px;
     border-radius: 5px;
+
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
 }
 
 /* SERVICES */
@@ -265,6 +269,10 @@ header h2 {
     opacity: 0;
 }
 
+/* SPECIFIC CAR DETAIL */
+.info-box-notification {
+    
+}
 /* ADMIN */
 input[type='file']:hover {
     cursor: pointer;
