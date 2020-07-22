@@ -9,6 +9,10 @@ body {
     min-height: 100vh;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 /* HEADER */
 header {
     width: 100vw;

@@ -50,7 +50,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="detail", methods={"GET"})
+     * @Route("/car/{type}/{id}", name="detail", methods={"GET"})
      */
     public function detail(Car $car): Response
     {
