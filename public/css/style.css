@@ -193,6 +193,7 @@ header h2 {
     overflow: hidden;
     border-radius: 15px;
     transition: 0.3s;
+    border: 2px solid rgba(0,0,0,0.30);
 
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
@@ -206,7 +207,7 @@ header h2 {
     box-shadow:  0 5px 15px -5px rgba(0,0,0,0.30);
 }
 .car-card:hover img {
-    transform: scale3d(1.1,1.1,1);
+    transform: scale3d(1,1,1);
 }
 .car-card .top {
     width: 100%;
@@ -227,6 +228,37 @@ header h2 {
     -webkit-box-shadow: 0 0px 5px 0px rgb(29, 29, 29);
     -moz-box-shadow: 0 0px 5px 0px rgb(29, 29, 29);
     box-shadow: 0 0px 5px 0px rgb(29, 29, 29);
+}
+.card-button {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: royalblue;
+    color: white;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-button p {
+    opacity: 0;
+}
+.card-button i {
+    position: absolute;
+    font-size: 2.4rem;
+}
+.card-button:hover {
+    width: 100%;
+    height: 30%;
+    border-radius: 0px;
+}
+.card-button:hover p {
+    opacity: 1;
+    transition: 1.2s;
+}
+.card-button:hover i {
+    opacity: 0;
 }
 
 /* ADMIN */

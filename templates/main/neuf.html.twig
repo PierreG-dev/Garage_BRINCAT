@@ -6,13 +6,27 @@
 
 <style>
     body {
-        background-color: #bdc3c7;
+        background-color: transparent;
         background-size: cover;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .params-list li::before {
+        content: "\2022";
+        color: royalblue;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
     }
 </style>
 
 
-<div class="container-fluid p-5" style="min-height: 70vh;">
+<div class="container-fluid p-5 bg-light" style="min-height: 70vh;">
+    <h1 class="text-dark text-center mb-5">Nos offres neufs</h1>
     <div class="row">
         {% for car in cars %}
         <div class="col-md-3 col-lg-3 col-sm-12 mb-5 text-center">
@@ -22,7 +36,19 @@
                 </div>
                 <div class="bottom">
                     <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
-                    <p class="card-text">{{ car.Color }}<br>{{ car.price }} € HT<br>{{ car.energyType }}</p>
+
+                    <ul class="params-list" style="text-align: left; margin-left: 22%;margin-top: 15px;">
+                        <li class="card-text">{{ car.Color }}</li>
+                        <li class="card-text">{{ car.energyType }}</li>
+                        <li class="card-text">{{ car.mileage }} Km</li>
+                    </ul>
+
+                    <h4 class="card-title" style="font-weight: bold; margin-top: -20px;">{{ car.price }} € HT</h4>
+
+                    <div class="card-button">
+                        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                        <p>En savoir plus</p>
+                    </div>
                 </div>
             </div>
         </div>
