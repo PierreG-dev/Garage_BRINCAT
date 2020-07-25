@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Car;
+use App\Entity\Message;
+use App\Form\MessageType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\CarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -68,11 +71,24 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/contact", name="contact", methods={"GET","POST"})
      */
-    public function contact() {
-        return $this->render('main/contact.html.twig', []);
+    public function contact(Request $request): Response {
+        $message = new Message();
+        $form = $this->createForm(MessageType::class, $message);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $message->setSeen(false);
+            $message->setDate(new \DateTime('now'));
+
+            $entityManager->persist($message);
+            $entityManager->flush();
+        }
+
+        return $this->render('main/contact.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
-
-
 }

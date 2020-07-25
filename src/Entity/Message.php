@@ -37,12 +37,6 @@ class Message
     private $seen;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Car", inversedBy="messages")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $car;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
@@ -96,18 +90,6 @@ class Message
     public function setSeen(bool $seen): self
     {
         $this->seen = $seen;
-
-        return $this;
-    }
-
-    public function getCar(): ?Car
-    {
-        return $this->car;
-    }
-
-    public function setCar(?Car $car): self
-    {
-        $this->car = $car;
 
         return $this;
     }

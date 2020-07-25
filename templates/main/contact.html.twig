@@ -4,6 +4,33 @@
 
 {% block body %}
 
+<style>
+    .form-container {
+        background: #343537;
+    }
+</style>
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            CASTEL
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6" style="border-left: 1px solid rgba(0,0,0,0.30)">
+            MONTAUBAN
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-light form-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                {{ include("message/message_form.html.twig") }}
+            </div>
+            <div class="col-3">
+                N'hésitez pas à venir nous voir !
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

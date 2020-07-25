@@ -45,18 +45,33 @@
         height: 100%;
         margin-left: 138px;
     }
+    #caracteristics_id {
+        text-align: center;
+    }
+
+    @media all and (max-width: 768px) {
+        #caracteristics {
+            margin-left: 0;
+        }
+        #caracteristics_id {
+            text-align: start;
+        }
+    }
 </style>
 
 <div class="info-box-notification text-light">
+    <i class="fa fa-question-circle-o" style="position: absolute; top:7px; left:5px;font-size: 1.2rem;" aria-hidden="true"></i>
+    <i class="fa fa-bars" style="position: absolute;left: 5px; top: 45%;" aria-hidden="true"></i>
+
     <h4 class="text-center mb-4">Besoin d'informations ?</h4>
 
     <h5 style="font-size: 1rem;text-align: center; text-align: center;">Téléphone</h5>
     <hr style="border-color: rgba(255,255,255,0.2); margin-top: -5px;">
-    <i class="fa fa-phone text-center d-block" aria-hidden="true">+33 5 63 32 33 78</i>
+    <i class="fa fa-phone text-center d-block sticker bg-success" aria-hidden="true">+33 5 63 32 33 78</i>
 
     <h5 style="font-size: 1rem;text-align: center;margin-top: 20px">E-mail</h5>
     <hr style="border-color: rgba(255,255,255,0.2); margin-top: -5px;">
-    <a href="mailto:sarlgaragebrincat@orange.fr" style="text-decoration-color: white; color: white;font-size: 1rem; text-align: center; display: block;">
+    <a href="mailto:sarlgaragebrincat@orange.fr" class="sticker bg-primary" style="text-decoration-color: white; color: white;font-size: 1rem; text-align: center; display: block;">
         sarlgaragebrincat@orange.fr
     </a>
 
@@ -77,7 +92,7 @@
                 class="sticker bg-info text-light">occasion</span></h2>
         {% endif %}
         <div class="col-md-6 col-lg-6 col-sm-12 text-dark p-5">
-            <h3 class="text-center">Caractéristiques</h3>
+            <h3 id="caracteristics_id">Caractéristiques</h3>
             <ul id="caracteristics">
                 <li><span style="font-weight: bold;">Couleur</span>: {{ car.color }}</li>
                 <li><span style="font-weight: bold;">Prix</span>: {{car.price}}€ HT</li>

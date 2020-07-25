@@ -207,6 +207,9 @@ header h2 {
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
 }
+.car-card li {
+    font-size: 1.2rem;
+}
 .car-card:hover {
     transform: translate3d(0,-3%,0);
     cursor: pointer;
@@ -222,6 +225,9 @@ header h2 {
     height: 150px;
     overflow: hidden;
     text-align: center;
+}
+.car-card .card-title {
+    margin-bottom: 0;
 }
 .top img {
     width: auto;
@@ -272,33 +278,49 @@ header h2 {
 /* SPECIFIC CAR DETAIL */
 .info-box-notification {
     position: fixed;
-    padding: 20px;
+    padding: 20px 30px;
     right: 0;
     top: 30%;
     background: #373737;
     height: 300px;
-    width: 250px;
+    width: 270px;
     z-index: 5;
     border-radius: 15px 0 0 15px;
     border: 1px solid rgb(100,100,100);
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.20);
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.20);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.20);
-    transform: translate3d(80%,0,0);
+    transform: translate3d(90%,0,0);
     transition: 0.4s;
 
-    animation: 0.4s alert-slide 1;
-    animation-delay: 4s;
+    animation: 5s alert-slide 1;
 }
 @keyframes alert-slide {
     0% {transform: translate3d(0,0,0);}
     90% {transform: translate3d(0,0,0);}
-    100% {transform: translate3d(80%,0,0);}
+    100% {transform: translate3d(90%,0,0);}
 }
 
 .info-box-notification:hover {
     transform: translate3d(0,0,0);
 }
+.info-box-notification .fa-bars {
+    transition: 0.2s;
+    opacity: 1;
+}
+.info-box-notification:hover .fa-bars {
+    opacity: 0;
+}
+
+@media all and (max-width: 768px) {
+    .info-box-notification {
+        display: none;
+    }
+    .card-button {
+        display: none;
+    }
+}
+
 /* ADMIN */
 input[type='file']:hover {
     cursor: pointer;
