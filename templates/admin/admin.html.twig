@@ -14,6 +14,9 @@
         align-items: center;
         justify-content: space-around;
     }
+    .button {
+        box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.30)
+    }
 </style>
 
 <div class="example-wrapper">
@@ -21,10 +24,10 @@
 
     <section class="container m-auto">
         <ul class="buttonList mt-5">
-            <li><a href="{{ path('car_index') }}" class="btn btn-lg btn-success">Gestion des véhicules</a></li>
-            <li><a href="{{ path('admin_registration') }}" class="btn btn-lg btn-info">Créer un nouvel administrateur</a></li>
-            <li><a href="{{ path('admin_logout') }}" class="btn btn-lg btn-danger">Se déconnecter</a></li>
-            <li><abbr title="En développement"><a href="" class="btn btn-lg btn-warning disabled">Messagerie</a></abbr></li>
+            <li><abbr title="Gérer les voitures en vente"><a href="{{ path('car_index') }}" class="btn btn-lg btn-light button">Gestion des véhicules</a></abbr></li>
+            <li><abbr title="Gérer les administrateurs"><a href="{{ path('admin_registration') }}" class="btn btn-lg btn-light button">Créer un nouvel administrateur</a></abbr></li>
+            <li><abbr title="Accéder à tous les messages reçus"><a href="{{ path('message_index') }}" class="btn btn-lg btn-light button">Messagerie</a></abbr></li>
+            <li><abbr title="Se déconnecter"><a href="{{ path('admin_logout') }}" class="btn btn-lg btn-danger button">Se déconnecter</a></abbr></li>
         </ul>
     </section>
 </div>
