@@ -4,43 +4,67 @@
 
 {% block body %}
 <style>
-    .table {
-        
+    .table-wrapper {
+        min-height: 70vh;
+    }
+
+    .unseen {
+        background: lightyellow;
+    }
+    a {
+        color: #373737;
+    }
+    .btn-light,.btn-danger {
+        z-index: 2;
+        -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.20);
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.20);
     }
 </style>
-    <h1>Boit de réception</h1>
+    <h1>Boite de réception</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Phone</th>
-                <th>Seen</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for message in messages %}
-            <tr>
-                <td>{{ message.id }}</td>
-                <td>{{ message.name }}</td>
-                <td>{{ message.date ? message.date|date('Y/m/d') : '' }}</td>
-                <td>{{ message.phone }}</td>
-                <td>{{ message.seen ? 'Yes' : 'No' }}</td>
-                <td>{{ message.description }}</td>
-                <td>
-                    <div class="btn btn-info"><a href="{{ path('message_show', {'id': message.id}) }}">Voir</a></div>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">Aucun messages dans la boite de réception.</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Nom de l'émetteur</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                {% if message.seen == false %}
+                <tr class="unseen message">
+                    <td>{{ message.id }}</td>
+                    <td>{{ message.name }}</td>
+                    <td>{{ message.date ? message.date|date('d/m/Y') : '' }}</td>
+                    <td style="display: flex;">
+                        <div class="btn btn-light mr-3 text-light"><a
+                                href="{{ path('message_show', {'id': message.id}) }}">Voir</a></div>
+                        {{ include('message/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+                {% else %}
+                <tr class="message">
+                    <td>{{ message.id }}</td>
+                    <td>{{ message.name }}</td>
+                    <td>{{ message.date ? message.date|date('d/m/Y') : '' }}</td>
+                    <td style="display: flex;">
+                        <div class="btn btn-light mr-3 text-light"><a
+                                href="{{ path('message_show', {'id': message.id}) }}">Voir</a></div>
+                        {{ include('message/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+                {% endif %}
+                {% else %}
+                <tr>
+                    <td colspan="7">Aucun messages dans la boite de réception.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 {% endblock %}
