@@ -3,38 +3,43 @@
 {% block title %}Message{% endblock %}
 
 {% block body %}
-    <h1>Message</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ message.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ message.name }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ message.date ? message.date|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ message.phone }}</td>
-            </tr>
-            <tr>
-                <th>Seen</th>
-                <td>{{ message.seen ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ message.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+<style>
+    .wrapper {
+        color: #373737;
+        min-height: 60vh;
+    }
+    h1 span {
+        font-weight: bold;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    .phone-sticker {
+        padding: 4px;
+        border-radius: 3px;
+        background: #47af01;
+        color: white;
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.20);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.20);
+    }
+</style>
 
-    <a href="{{ path('message_index') }}">back to list</a>
+    <div class="container m-auto wrapper">
+        <h1>Message de <span class="text-bold">{{ message.name }}</span></h1>
+        <i>Reçu le {{ message.date ? message.date|date('d/m/Y') : '' }}</i>
+        <hr class="w-50">
+        
+        <p class="mt-5">{{ message.description }}</p>
+        
+        <p>Numéro de contact <span class="phone-sticker">{{ message.phone }}</span></p>
+    </div>
 
-    {{ include('message/_delete_form.html.twig') }}
+    <div class="p-3 m-auto d-flex flex-column">
+        <a class="mb-3" href="{{ path('message_index') }}">Retourner à la boite de réception</a>
+        
+        {{ include('message/_delete_form.html.twig') }}
+    </div>
+    
 {% endblock %}
