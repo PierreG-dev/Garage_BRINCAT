@@ -5,29 +5,157 @@
 {% block body %}
 
 <style>
+    body {
+        background-color: #ecf0f1;
+    }
+
+    h1 {
+        color: #373737;
+        margin-top: 20px;
+    }
+
     .form-container {
         background: #343537;
+        padding: 20px;
+    }
+
+    .infos-box {
+        padding: 10px;
+    }
+
+    .infos-row {
+        padding: 20px;
+        background-color: #ecf0f1;
+        color: #373737;
+    }
+
+    .infos-row ul {
+        margin-top: 3%;
+        list-style: none;
+        margin-left: 5%;
+    }
+
+    .infos-row ul li {
+        margin-bottom: 10px;
+    }
+
+    .infos-row ul li a {
+        color: #373737;
+    }
+
+    .infos-row ul li a:hover {
+        text-decoration: underline #373737 !important;
+    }
+
+    .photo {
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.30);
+        width: 90%;
+        height: auto;
+        margin: auto;
+        border-radius: 2px;
+    }
+
+    .separator {
+        width: 100vw;
+        height: 50px;
+        background: url("{{ asset('res/header-3.jpg') }}") fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.50);
+
+    }
+
+    @media all and (max-width: 768px) {
+        .first-photo {
+            margin-bottom: 30px;
+        }
     }
 </style>
 
-<div class="container">
+<div class="container m-auto">
+    <h1 class="">Nous joindre</h1>
+    <hr class="bg-success " style="border-width: 3px;width: 50px;">
+</div>
+
+<div class="container infos-row">
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            CASTEL
+        <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column">
+            <h2>Castelsarrasin</h2>
+            <hr class="w-25">
+            <ul>
+                <li><i class="fa fa-phone text-dark" aria-hidden="true"></i> <a href="tel:+33563323378">05 63 32 33
+                        78</a></li>
+                <li><i class="fa fa-envelope text-dark" aria-hidden="true"></i> <a
+                        href="mailto:sarlgaragebrincat@orange.fr">sarlgaragebrincat@orange.fr</a></li>
+                <li><i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <a
+                        href="https://www.google.com/maps/place/SARL+Garage+Brincat/@44.0515496,0.9612194,11z/data=!4m8!1m2!2m1!1sgarabe+brincat!3m4!1s0x12abf3aa18d4769b:0x10ae6d274a374797!8m2!3d44.0516459!4d1.1013016">93
+                        Avenue du maréchal Leclerc, 82100, Castelsarrasin</a></li>
+            </ul>
+            <img src="{{ asset('res/garage_brincat_castelsarrasin.png') }}"
+                alt="garage brincat castelsarrasin extérieur" class="photo first-photo">
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6" style="border-left: 1px solid rgba(0,0,0,0.30)">
-            MONTAUBAN
+        <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column">
+            <h2>Montauban</h2>
+            <hr class="w-25">
+            <ul>
+                <li><i class="fa fa-phone text-dark" aria-hidden="true"></i> <a href="tel:+33563662961">05 63 66 29
+                        61</a></li>
+                <li><i class="fa fa-envelope text-dark" aria-hidden="true"></i> <a
+                        href="mailto:sarl.brincat@wanadoo.fr">sarl.brincat@wanadoo.fr</a></li>
+                <li><i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <a
+                        href="https://www.google.com/maps/dir//Garage+Brincat+Montauban/@44.0029838,1.2705296,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12ac0e71dd95a939:0xa2bbec5c870dec2a!2m2!1d1.3405694!2d44.0030052">426
+                        Avenue de Toulouse 82000 Montauban,France</a></li>
+            </ul>
+            <img src="{{ asset('res/garage_brincat_montauban.jpg') }}" alt="garage brincat montauban extérieur"
+                class="photo">
+        </div>
+
+        <div class="col-12 mt-5">
+            <h1 class="">Horaires d'ouverture</h1>
+            <hr class="bg-success " style="border-width: 3px;width: 50px;">
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column align-items-center">
+            <h4>Castelsarrasin</h4>
+            <ul>
+                <li>Lundi: <span class="text-danger">Fermé</span></li>
+                <li>Mardi: 8:00-12:00 | 14:00-18:00</li>
+                <li>Mercredi: 8:00-12:00 | 14:00-18:00</li>
+                <li>Jeudi: 8:00-12:00 | 14:00-18:00</li>
+                <li>Vendredi: 8:00-12:00 | 14:00-18:00</li>
+                <li>Samedi: 8:00-12:00 | 14:00-17:00</li>
+                <li>Dimanche: <span class="text-danger">Fermé</span></li>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column align-items-center">
+            <h4>Montauban</h4>
+            <ul>
+                <li>Lundi: <span class="text-danger">Fermé</span></li>
+                <li>Mardi: 8:00-12:00 | 14:00-19:00</li>
+                <li>Mercredi: 8:00-12:00 | 14:00-19:00</li>
+                <li>Jeudi: 8:00-12:00 | 14:00-19:00</li>
+                <li>Vendredi: 8:00-12:00 | 14:00-19:00</li>
+                <li>Samedi: 8:00-12:00 | 14:00-18:00</li>
+                <li>Dimanche: <span class="text-danger">Fermé</span></li>
+            </ul>
         </div>
     </div>
 </div>
+
+<div class="separator"></div>
+
 <div class="container-fluid text-light form-container">
+    <div class="container m-auto">
+        <h1 class="text-light">Formulaire de contact</h1>
+        <hr class="bg-success" style="border-width: 3px;width: 50px;">
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col-9">
-                {{ include("message/message_form.html.twig") }}
+            <div class="col-12">
+                <p>Une requête spécifique ? Laissez nous un message et nous reviendrons vers vous dans les plus brefs délais.</p>
             </div>
-            <div class="col-3">
-                N'hésitez pas à venir nous voir !
+            <div class="col-12">
+                {{ include("message/message_form.html.twig") }}
             </div>
         </div>
     </div>
