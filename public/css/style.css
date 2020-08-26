@@ -80,11 +80,7 @@ header h2 {
 
     #header_content {
         margin-top: 0 !important;
-    }s="container ml-2" id="header_content">
-        <div class="col p-3" style="height: 250px; font-family: 'PT Sans', sans-serif;">
-            <h2 class="row-4 text-light">La nouvelle 500 est arrivée</h2>
-            <div class="row-4 text-light mt-1 " id="header_text">Venez la découvrir dès maintenant</div>
-            <a class="btn btn-outline-light btn-design" id="header_btn" href="{{ path('about') }}">EN SAVOIR PLUS</a>
+    }
 }
 
 /* NAVBAR */
@@ -145,7 +141,7 @@ header h2 {
     position: absolute;
     top: 100%;
     width: 350px;
-    height: 50px;
+    min-height: 50px;
     background: rgb(25, 175, 25);
 }
 
