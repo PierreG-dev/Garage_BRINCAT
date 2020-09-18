@@ -6,14 +6,18 @@
         <div class="row" style="height: 100px;">
             <div class="col-5" style="margin:auto">
                 <a class="navbar-home text-center text-white" href="{{ path('home') }}">
-                    <h1 style="font-size: 2.1rem;">Garage <span style="font-weight: bold">BRINCAT</span></h1>
+                    <div style="font-size: 2.1rem; line-height: 2.3rem; letter-spacing: 0.1em;">Garage <span
+                            style="font-weight: bold">BRINCAT</span></div>
                 </a>
             </div>
             <div class="col-7 text-white" style="margin: auto;">
                 {% if not app.user %}
                 <div class="row d-flex align-items-center">
-                    <div class="col-lg-4 d-md-none d-lg-block"><i class="fa fa-envelope text-light" aria-hidden="true"></i>  <a href="mailto:sarlgaragebrincat@orange.fr" class="text-light">sarlgaragebrincat@orange.fr</a></div>
-                    <div class="col-lg-4 d-md-none d-lg-block"><i class="fa fa-phone text-light" aria-hidden="true"></i>  <a href="tel:+05 63 32 33 78" class="text-light">05 63 32 33 78</a></div>
+                    <div class="col-lg-5 d-md-none d-lg-block"><i class="fa fa-envelope text-light"
+                            aria-hidden="true"></i> <a href="mailto:sarlgaragebrincat@orange.fr"
+                            class="text-light">sarlgaragebrincat@orange.fr</a></div>
+                    <div class="col-lg-3 d-md-none d-lg-block"><i class="fa fa-phone text-light" aria-hidden="true"></i>
+                        <a href="tel:+05 63 32 33 78" class="text-light">05 63 32 33 78</a></div>
                     <div class="col-lg-4 col-md-9 d-flex align-items-center">
                         <i class="text-light" style="font-weight: 600">Protégeons nous les uns les autres</i>
                         <img src="{{ asset('res/masque-obligatoire.png') }}" alt="port du masque obligatoire"
@@ -29,7 +33,8 @@
         </div>
     </div>
 
-    <div class="navbar navbar-expand-lg navbar-dark" style="background: #343537; position: sticky !important; top: 0; z-index: 2">
+    <div class="navbar navbar-expand-lg navbar-dark"
+        style="background: #343537; position: sticky !important; top: 0; z-index: 2">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
