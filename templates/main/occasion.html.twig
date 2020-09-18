@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SARL Garage BRINCAT{% endblock %}
+{% block title %}Offres occasion - Garage Brincat Castelsarrasin / Montauban{% endblock %}
+
+{% block head %}
+<meta name="description"
+    content="Notre liste de véhicules occasions, pour plus de renseignements veuillez vous rendre au directement au Garage Brincat Castelsarrasin ou Montauban.">
+{% endblock %}
 
 {% block body %}
 
@@ -24,30 +29,49 @@
     }
 </style>
 
+<div class="container-fluid bg-dark p-4">
+    <div class="row bg-dark">
+        <div class="col-2"></div>
+        <h1 class="text-light">Nos offres occasion</h1>
+    </div>
+    <div class="row mb-5 bg-dark">
+        <div class="col-2"></div>
+        <hr class="bg-success" style="border-width: 3px; width: 50px">
+    </div>
+    <div class="container m-auto bg-dark">
+        <div class="row">
+            <p class=" text-light" style="font-size: 1.2rem;">Découvrez nos offres occasion disponibles actuellement. <br>
+                Pour plus d'informations, rendez vous directement au <strong>Garage Brincat Castelsarrasin /
+                    Montauban</strong> <br> ou au téléphone au <a rel="nofollow" href="tel:+33563323378">05 63 32 33
+                    78</a>.
+            </p>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid p-5 bg-light" style="min-height: 70vh;">
-    <h1 class="text-dark text-center mb-5">Nos offres occasions</h1>
     <div class="row">
         {% for car in cars %}
         <div class="col-md-6 col-lg-3 col-sm-12">
-
             <div class="mb-5 text-center d-flex justify-content-center">
                 <a href="{{ path('detail', {"type": 'occasion', "id": car.id}) }}">
                     <div class="car-card">
                         <div class="top">
-                            <img src="/images/properties/{{ car.filename }}" alt="{{car.filename}}">
+                            <img src="/images/properties/{{ car.filename }}"
+                                alt="{{ car.brand }} {{ car.model }} garage castelsarrasin montauban">
                         </div>
                         <div class="bottom">
-                            <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                            <p class="card-title" style="font-size: 1.3rem;letter-spacing:0.05em;font-weight: bold;">
+                                {{ car.brand }} {{ car.model }}</p>
 
-                            <ul class="params-list" style="text-align: left; margin-left: 22%;margin-top: 15px;">
+                            <ul class="params-list" style="text-align: left; margin-left: 22%;margin-top: 12px;">
                                 <li class="card-text">{{ car.Color }}</li>
                                 <li class="card-text">{{ car.energyType }}</li>
                                 <li class="card-text">{{ car.mileage }} Km</li>
                             </ul>
 
-                            <h4 class="card-title" style="font-weight: bold; margin-top: -20px;">{{ car.price }} € HT
-                            </h4>
+                            <p class="card-title" style="font-weight: bold; margin-top: -20px; font-size: 1.2rem;">
+                                {{ car.price }} € HT</p>
 
                             <div class="card-button">
                                 <i class="fa fa-question-circle-o" aria-hidden="true"></i>
@@ -59,7 +83,6 @@
             </div>
 
         </div>
-
         {% else %}
         RIEN A AFFICHER
         {% endfor %}

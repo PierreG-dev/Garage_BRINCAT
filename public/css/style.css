@@ -16,6 +16,7 @@ a:hover {
     text-decoration: none;
 }
 
+
 /* HEADER */
 header {
     width: 100vw;
@@ -217,7 +218,7 @@ header h2 {
     overflow: hidden;
     border-radius: 15px;
     transition: 0.3s;
-    border: 2px solid rgba(0,0,0,0.30);
+    
 
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.10);
