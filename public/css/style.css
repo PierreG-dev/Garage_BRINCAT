@@ -11,7 +11,9 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
 }
-
+section {
+    overflow-x: hidden;
+}
 a:hover {
     text-decoration: none;
 }
@@ -21,7 +23,7 @@ a:hover {
 header {
     width: 100vw;
     height: 600px;
-    background-image: url(../res/bg-header.jpg);
+    background-image: url(../res/garage-castelsarrasin-montauban-bg_header.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,7 +58,6 @@ header h2 {
 }
 
 .separation-div {
-    height: 20vh;
     background: fixed;
     background-size: cover;
     background-position: center;
@@ -68,7 +69,39 @@ header h2 {
 }
 
 .first {
-    background-image: url(../res/header_between_4.jpg);
+    height: 20vh;
+    background-image: url(../res/garage-castelsarrasin-montauban-header_between_4.jpg);
+}
+.second {
+    background-image: url(../res/garage-castelsarrasin-montauban-header_between.jpg);
+    transition: 1s;
+}
+
+.slider-h {
+    color: #fafafa;
+    text-shadow: 0px 0px 7px rgba(37,37,37,0.8);
+    font-size: 2.1rem;
+    font-weight: bold;
+}
+.slider-p {
+    color: #fafafa;
+    text-shadow: 0px 0px 7px rgba(37,37,37,0.8);
+    font-size: 2rem;
+}
+.slider-fa {
+    color: gold;
+    text-shadow: 0px 0px 7px rgba(37,37,37,0.8);
+    font-size: 2.3rem;
+}
+.slider-mini {
+    font-size: 1rem;
+    color: #fafafa !important;
+    opacity: 0.6;
+    text-shadow: 0px 0px 7px rgba(37,37,37,0.8);
+    transition: 0.1s;
+}
+.slider-mini:hover {
+    opacity: 1;
 }
 
 .ul-row {
@@ -98,6 +131,12 @@ header h2 {
 
     #header_btn {
         font-size: 1rem;
+    }
+
+    .slider-mini {
+        opacity: 1;
+        border: 2px solid #fafafa;
+        padding: 3px 6px;
     }
 }
 
@@ -155,7 +194,16 @@ header h2 {
     border-radius: 2px;
     background-size: cover;
     filter: contrast(75%);
-    margin-top: 40px;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+}
+.service-card img {
+    width: auto;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
 }
 .service-bottom {
     position: absolute;
@@ -166,8 +214,11 @@ header h2 {
     min-height: 40px;
     background: rgb(25, 175, 25);
     text-shadow: 0px 0px 7px rgba(37,37,37,0.4);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
-
+/*
 #service_1{
     background-image: url(../res/service_expertise.jpg);
 }
@@ -187,11 +238,21 @@ header h2 {
 #service_6{
     background-image: url(../res/service_garantie.jpg);
 }
-
+*/
+@media all and (min-width: 1300px) {
+    .service-card img{
+        width: 100%;
+        height: auto;
+    }
+}
 @media all and (max-width: 768px) {
     .service-card {
         width: 200px;
         height: 150px;
+    }
+    .service-card img{
+        width: 100%;
+        height: auto;
     }
 
     .service-bottom {
@@ -199,14 +260,11 @@ header h2 {
         height: auto;
     }
     #services_container {
-        padding: 0 8%;
+        padding: 0 0%;
     }
     .service-card h2 {
         font-size: 1.6rem;
     }
-    #service_5 {
-    margin-top: 55px;
-}
 }
 
 /* CAR DISPLAY */

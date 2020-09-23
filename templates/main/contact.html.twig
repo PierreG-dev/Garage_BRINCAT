@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SARL Garage BRINCAT{% endblock %}
+{% block title %}Garage BRINCAT Castelsarrasin / Montauban: Contact{% endblock %}
+
+{% block head %}
+<meta name="description" content="SARL Brincat, Garage FIAT à Castelsarrasin et à Montauban. Notre liste d'horaires et de contacts.">
+{% endblock %}
 
 {% block body %}
 
@@ -58,7 +62,7 @@
     .separator {
         width: 100vw;
         height: 50px;
-        background: url("{{ asset('res/header-3.jpg') }}") fixed;
+        background: url("{{ asset('res/garage-castelsarrasin-montauban-header-3.jpg') }}") fixed;
         background-repeat: no-repeat;
         background-size: cover;
         box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.50);
@@ -73,7 +77,7 @@
 </style>
 
 <div class="container m-auto">
-    <h2 class="">Nous joindre</h2>
+    <h1>Contact</h1>
     <hr class="bg-success" style="border-width: 3px;width: 50px;">
 </div>
 
@@ -83,28 +87,28 @@
             <h3>Castelsarrasin</h3>
             <hr class="w-25">
             <ul>
-                <li><i class="fa fa-phone text-dark" aria-hidden="true"></i> <a href="tel:+33563323378" target="_blank">05 63 32 33 78</a></li>
+                <li><i class="fa fa-phone text-dark" aria-hidden="true"></i> <a href="tel:+33563323378" rel="nofollow" target="_blank">05 63 32 33 78</a></li>
                 <li><i class="fa fa-envelope text-dark" aria-hidden="true"></i> <a
-                        href="mailto:sarlgaragebrincat@orange.fr" target="_blank">sarlgaragebrincat@orange.fr</a></li>
+                        href="mailto:sarlgaragebrincat@orange.fr" rel="nofollow" target="_blank">sarlgaragebrincat@orange.fr</a></li>
                 <li><i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <a
-                        href="https://www.google.com/maps/dir//SARL+Garage+Brincat,+93+Avenue+du+Maréchal+Leclerc,+82100+Castelsarrasin/@44.0515496,0.9612194,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12abf3aa18d4769b:0x10ae6d274a374797!2m2!1d1.1013016!2d44.0516459" target="_blank">93
+                        href="https://www.google.com/maps/dir//SARL+Garage+Brincat,+93+Avenue+du+Maréchal+Leclerc,+82100+Castelsarrasin/@44.0515496,0.9612194,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12abf3aa18d4769b:0x10ae6d274a374797!2m2!1d1.1013016!2d44.0516459" rel="nofollow" target="_blank">93
                         Avenue du Maréchal Leclerc, 82100, Castelsarrasin</a></li>
             </ul>
-            <img src="{{ asset('res/garage_brincat_castelsarrasin.png') }}"
+            <img src="{{ asset('res/garage-brincat-castelsarrasin.jpg') }}"
                 alt="garage brincat castelsarrasin extérieur" class="photo first-photo">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column">
             <h3>Montauban</h3>
             <hr class="w-25">
             <ul>
-                <li><i class="fa fa-phone text-dark" aria-hidden="true"></i> <a href="tel:+33563662961" target="_blank">05 63 66 29 61</a></li>
+                <li><i class="fa fa-phone text-dark" aria-hidden="true"></i> <a href="tel:+33563662961" rel="nofollow" target="_blank">05 63 66 29 61</a></li>
                 <li><i class="fa fa-envelope text-dark" aria-hidden="true"></i> <a
-                        href="mailto:sarl.brincat@wanadoo.fr" target="_blank">sarl.brincat@wanadoo.fr</a></li>
+                        href="mailto:sarl.brincat@wanadoo.fr" rel="nofollow" target="_blank">sarl.brincat@wanadoo.fr</a></li>
                 <li><i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <a
-                        href="https://www.google.com/maps/dir//Garage+Brincat+Montauban/@44.0029838,1.2705296,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12ac0e71dd95a939:0xa2bbec5c870dec2a!2m2!1d1.3405694!2d44.0030052" target="_blank">426
+                        href="https://www.google.com/maps/dir//Garage+Brincat+Montauban/@44.0029838,1.2705296,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12ac0e71dd95a939:0xa2bbec5c870dec2a!2m2!1d1.3405694!2d44.0030052" rel="nofollow" target="_blank">426
                         Avenue de Toulouse 82000 Montauban,France</a></li>
             </ul>
-            <img src="{{ asset('res/garage_brincat_montauban.jpg') }}" alt="garage brincat montauban extérieur"
+            <img src="{{ asset('res/garage-brincat-montauban.jpg') }}" alt="garage brincat montauban extérieur"
                 class="photo">
         </div>
 
@@ -144,7 +148,7 @@
 
 <div class="container-fluid text-light form-container">
     <div class="container m-auto">
-        <h1 class="text-light">Formulaire de contact</h1>
+        <h2 class="text-light">Formulaire de contact</h2>
         <hr class="bg-success" style="border-width: 3px;width: 50px;">
     </div>
     <div class="container">
