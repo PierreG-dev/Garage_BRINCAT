@@ -1,31 +1,41 @@
+<style>
+    .footer-links {
+        transition: 0.3s;
+        opacity: 0.6;
+    }
+    .footer-links:hover {
+        opacity: 1;
+    }
+</style>
+
 <!-- Footer -->
 <footer class="page-footer font-small" style="background: #272727;">
     <!-- Footer Links -->
     <div class="container text-center text-md-left text-light">
         <!-- Grid row -->
         <div class="row">
-
             <div class="col-md-6 mx-auto text-center">
                 <!-- Links -->
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Navigation</h5>
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="{{ path('home') }}" class="text-white">Accueil</a>
+                        <a href="{{ path('home') }}" class="text-white footer-links">Accueil</a>
                     </li>
                     <li>
-                        <a href="{{ path('neuf') }}" class="text-white">Neuf</a>
+                        <a href="{{ path('neuf') }}" class="text-white footer-links">Offres neuf</a>
                     </li>
                     <li>
-                        <a href="{{ path('occasion') }}" class="text-white">Occasion</a>
+                        <a href="{{ path('occasion') }}" class="text-white footer-links">Offres occasion</a>
                     </li>
                     <li>
-                        <a href="{{ path('contact') }}" class="text-white">Contact</a>
+                        <a href="{{ path('contact') }}" class="text-white footer-links">Contact</a>
                     </li>
                     <li>
-                        <a href="{{ path('about') }}" class="text-white">A propos</a>
+                        <a href="{{ path('about') }}" class="text-white footer-links">A propos</a>
                     </li>
                 </ul>
+
             </div>
 
             <div class="col-md-6 mx-auto text-center">
@@ -33,13 +43,13 @@
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Reseaux</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://www.google.fr/maps/search/Garage+Brincat/@44.0273042,1.150896,12z/data=!3m1!4b1" target="_blank" class="text-white">Google Maps</a>
+                        <a href="https://www.google.fr/maps/search/Garage+Brincat/@44.0273042,1.150896,12z/data=!3m1!4b1" target="_blank" rel="nofollow" class="text-white footer-links">Google Maps</a>
                     </li>
                     <li>
-                        <a href="https://www.allogarage.fr/garages/details-garage-SARL-Garage-Brincat-12985.html" target="_blank" class="text-white">Allogarage</a>
+                        <a href="https://www.allogarage.fr/garages/details-garage-SARL-Garage-Brincat-12985.html" target="_blank" rel="nofollow" class="text-white footer-links">Allogarage</a>
                     </li>
                     <li>
-                        <a href="https://www.idgarages.com/fr-fr/garage/castelsarrasin/GA5948_sarl-garage-brincat" target="_blank" class="text-white">IdGarages</a>
+                        <a href="https://www.idgarages.com/fr-fr/garage/castelsarrasin/GA5948_sarl-garage-brincat" target="_blank" rel="nofollow" class="text-white footer-links">IdGarages</a>
                     </li>
                 </ul>
             </div>

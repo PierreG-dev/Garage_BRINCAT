@@ -191,7 +191,7 @@ header h2 {
     height: 200px;
     width: 21vw;
     min-width: 290px;
-    border-radius: 2px;
+    border-radius: 2px 2px 0 0;
     background-size: cover;
     filter: contrast(75%);
     -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
@@ -208,15 +208,16 @@ header h2 {
 .service-bottom {
     position: absolute;
     font-size: 1.5rem;
+    border-radius: 0 0 2px 2px;
     top: 100%;
     min-width: 290px;
     width: 21vw;
     min-height: 40px;
     background: rgb(25, 175, 25);
     text-shadow: 0px 0px 7px rgba(37,37,37,0.4);
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
 }
 /*
 #service_1{
