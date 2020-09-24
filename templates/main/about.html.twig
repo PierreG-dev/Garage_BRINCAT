@@ -10,57 +10,123 @@
 
 <style>
     h1 {
-
+        position: absolute;
+        text-shadow: 0px 0px 7px rgba(37,37,37,1);
+        color: white;
+        text-align: center;
+        width: 100vw;
+        margin-top: 10px;
     }
 
     h2 {
-
+        margin-top: 40px;
     }
 
     h3 {
-
+        margin-top: 20px;
     }
 
     .end-p {
-
+        font-weight: 600;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
+    p {
+        font-size: 1.2rem;
+    }
+
+    .photo {
+        width: 100%;
+        height: auto;
+        position: relative;
+        -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    @media all and (max-width: 768px) {
+        h1 {
+            opacity: 0;
+        }
+    }
+
+    @media all and (min-width: 1060px) {
+        .photo {
+            width: 100%;
+            height: auto;
+            margin-top: -30%;
+            margin-bottom: -5%;
+        }
+    }
 </style>
 
-<section>
-    <h1>SARL Garage BRINCAT Castelsarrasin & BRINCAT fils Montauban</h1>
-    
+<section class="container-fluid">
 
-    <h2>A PROPOS DE NOUS</h2>
-    <p>
-        SARL BRINCAT est une entreprise familiale fondée il y a plus de 50 ans et qui s'est étendue au fil
-        du temps. <br>
-        Durant toutes ces années nous avons fièrement arboré le drapeau FIAT, qui encore aujourd'hui nous fait confiance pour
-        vous proposer le meilleur.
-    </p>
+    <div class="row" style="max-height: 70vh;overflow:hidden;">
+        <img src="{{ asset('res/garage-castelsarrasin-montauban-about.jpg') }}" class="photo" alt="garage castelsarrasin extérieur">
+        <h1>SARL Garage BRINCAT Castelsarrasin & BRINCAT fils Montauban</h1>
+    </div>
 
-    <h2>NOS SERVICES</h2>
+    <div class="container">
+        <div class="row">
+            <h2 class="col-12">A PROPOS DE NOUS</h2>
+            <div class="row mb-1">
+                <div class="col-2"></div>
+                <hr class="bg-success" style="border-width: 3px; width: 50px">
+            </div>
 
-    <h3>Mécanique</h3>
-    <p>Nous vous proposons des réparations toutes marques, en mécanique, carrosserie peinture et changement de bris de glace
-        directement dans nos locaux, ainsi que le recalibrage des voyants avec une malette electronique certifiée FIAT. <br>
-        Spécialisé et agréé dans le camping-car,vous pourrez compter sur notre expertise pour assurer tous vos besoins de
-        réparation, vidange, tout ce qu'il vous faut pour un voyage paisible à bord de votre véhicule ! <br>
-        Dépanneur conventionné par des groupes d'assistance nous sommes disponibles pour intervenir, ainsi que pour toutes
-        demandes de remorquage.</p>
-    
-    <h3>Vente de véhicules</h3>
-    <p>
-        Envie de changement ? Aucuns problèmes ! Grâce à notre large choix de véhicules, trouvez celui qui vous convient. <br>
-        Que ce soit un véhicule neuf, ou un véhicule occasion, il y en a pour tous les budgets avec notre réseau FIAT ; que ce soit en concession ou en commande, vous trouverez celle qui vous convient.
-    </p>
+            <p class="col-12">
+                SARL BRINCAT est une entreprise familiale fondée il y a plus de 50 ans et qui s'est étendue au fil
+                du temps. <br>
+                Durant toutes ces années nous avons fièrement arboré le drapeau FIAT, qui encore aujourd'hui nous fait
+                confiance
+                pour
+                vous proposer le meilleur.
+            </p>
 
-    <p class="end-p">
-        Elizabeth, Claire, Rihéna, Jean-michel, Alexandre, Mathieu, Stéphane, Christan et Cyril vous accueillent du mardi au
-        vendredi de 8h00 à 12h00 et de 14h00 à 18h00, et le samedi de 8h00 à 12h00 et de 14h00 à 18h00.
-        Au plaisir de vous Recevoir dans nos locaux,<br><br>Toute l'équipe
-    </p>
-   
+            <h2 class="col-12">NOS SERVICES</h2>
+            <div class="row mb-1">
+                <div class="col-2"></div>
+                <hr class="bg-success" style="border-width: 3px; width: 50px">
+            </div>
+
+            <h3 class="col-12">Mécanique</h3>
+            <p class="col-12">Nous vous proposons des réparations toutes marques, en mécanique, carrosserie peinture et
+                changement de bris de glace
+                directement dans nos locaux, ainsi que le recalibrage des voyants avec une malette electronique
+                certifiée FIAT.
+                <br>
+                Spécialisé et agréé dans le camping-car,vous pourrez compter sur notre expertise pour assurer tous vos
+                besoins
+                de
+                réparation, vidange, tout ce qu'il vous faut pour un voyage paisible à bord de votre véhicule ! <br>
+                Dépanneur conventionné par des groupes d'assistance nous sommes disponibles pour intervenir, ainsi que
+                pour
+                toutes
+                demandes de remorquage.</p>
+
+            <h3 class="col-12">Vente de véhicules</h3>
+            <p class="col-12">
+                Envie de changement ? Aucuns problèmes ! Grâce à notre large choix de véhicules, trouvez celui qui vous
+                convient. <br>
+                Que ce soit un véhicule neuf, ou un véhicule occasion, il y en a pour tous les budgets avec notre réseau
+                FIAT ;
+                que ce soit en concession ou en commande, vous trouverez celle qui vous convient.
+            </p>
+
+            <p class="end-p">
+                <i>
+                    Elizabeth, Claire, Rihéna, Jean-michel, Alexandre, Mathieu, Stéphane, Christan et Cyril vous accueillent
+                    du
+                    mardi au
+                    vendredi de 8h00 à 12h00 et de 14h00 à 18h00, et le samedi de 8h00 à 12h00 et de 14h00 à 18h00. <br> <br>
+                    Au plaisir de vous Recevoir dans nos locaux,<br>Toute l'équipe
+                </i>
+            </p>
+        </div>
+    </div>
+
 </section>
 
 {% endblock %}
