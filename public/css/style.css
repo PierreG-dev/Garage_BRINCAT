@@ -223,27 +223,7 @@ header h2 {
     -moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
 }
-/*
-#service_1{
-    background-image: url(../res/service_expertise.jpg);
-}
-#service_2{
-    background-image: url(../res/service_reparation.jpg);
-}
-#service_3{
-    background-image: url(../res/service_depannage.jpg);
-    filter: contrast(65%);
-}
-#service_4{
-    background-image: url(../res/service_vente.jpg);
-}
-#service_5{
-    background-image: url(../res/service_revision.jpg);
-}
-#service_6{
-    background-image: url(../res/service_garantie.jpg);
-}
-*/
+
 @media all and (min-width: 1300px) {
     .service-card img{
         width: 100%;
