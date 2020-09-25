@@ -112,7 +112,6 @@ header h2 {
         height: 250px;
         padding: 0.3rem;
         font-size: 1rem;
-        background-position-x: -5rem;
     }
 
     header h2 {
@@ -136,6 +135,12 @@ header h2 {
         opacity: 1;
         border: 2px solid #fafafa;
         padding: 3px 6px;
+    }
+}
+
+@media all and (max-width: 680px) {
+    header {
+        background-position-x: -5rem;
     }
 }
 
