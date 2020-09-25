@@ -1,0 +1,13 @@
+# ----------- GESTION DE RESSOURCES GOOGLE IMAGES -----------
+User-agent: Googlebot-Image
+Disallow: /res/
+Allow: /res/garage-brincat-castelsarrasin.jpg
+Allow: /res/garage-brincat-montauban.jpg
+Allow: /res/garage-castelsarrasin-montauban-about.jpg
+
+# ----------- RESTRICTION EXPLORATION ADMINISTRATION DE LA PLATEFORME -----------
+User-agent: *
+Disallow: /admin/auth
+
+# ----------- SITEMAP -----------
+Sitemap: https://www.sarlgaragebrincat.fr/sitemap.xml
