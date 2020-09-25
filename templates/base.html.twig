@@ -9,7 +9,7 @@
         {% block stylesheets %}
             <link rel="icon" href="{{ asset('res/garage-castelsarrasin-montauban-brincat.ico')}}" />
             <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         {% endblock %}
@@ -26,13 +26,12 @@
 
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script src="{{ asset('js/jquery.min.js') }}"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="{{ asset('js/bootstrap.min.js') }}"
-                crossorigin="anonymous"></script>
+            <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        crossorigin="anonymous"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
         {% endblock %}
 
 
