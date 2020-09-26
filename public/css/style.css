@@ -57,10 +57,13 @@ header h2 {
 }
 
 .separation-div {
-    background: fixed;
-    background-size: cover;
+    -webkit-background-attachment: fixed !important;
+    -moz-background-attachment: fixed !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
     background-position: center;
     background-origin: center;
+    width: 100%;
     filter: contrast(80%);
     -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
@@ -198,9 +201,6 @@ header h2 {
     border-radius: 2px 2px 0 0;
     background-size: cover;
     filter: contrast(75%);
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
 .service-card img {
     width: auto;
@@ -219,9 +219,6 @@ header h2 {
     min-height: 40px;
     background: rgb(25, 175, 25);
     text-shadow: 0px 0px 7px rgba(37,37,37,0.4);
-    -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
 }
 
 @media all and (min-width: 1300px) {

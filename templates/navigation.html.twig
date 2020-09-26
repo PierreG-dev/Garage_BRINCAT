@@ -1,3 +1,16 @@
+<style>
+    .navbar-brand {
+        display: none;
+    }
+
+    @media all and (max-width: 768px) {
+        .navbar-brand {
+            display: block;
+        }
+    }
+    
+</style>
+
 {% if app.user %}
 <div class="overNav container-fluid" style="background-color: #009432;">
     {% else %}
@@ -37,11 +50,11 @@
 
     <div class="navbar navbar-expand-lg navbar-dark"
         style="background: #343537; position: sticky !important; top: 0; z-index: 2">
-        <a class="navbar-brand" href="{{ path('home') }}" style="display: none;">Sarl Garage Brincat</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" href="{{ path('home') }}">SARL GARAGE BRINCAT</a>
         <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 10vw;">
             <ul class="navbar-nav">
                 <li class="nav-item"

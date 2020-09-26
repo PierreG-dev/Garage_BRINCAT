@@ -62,7 +62,10 @@
     .separator {
         width: 100vw;
         height: 50px;
-        background: url("{{ asset('res/garage-castelsarrasin-montauban-header-3.jpg') }}") fixed;
+        background: url("{{ asset('res/garage-castelsarrasin-montauban-header-3.jpg') }}");
+        -webkit-background-attachment: fixed !important;
+        -moz-background-attachment: fixed !important;
+        background-attachment: fixed !important;
         background-repeat: no-repeat;
         background-size: cover;
         box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.50);
