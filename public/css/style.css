@@ -57,26 +57,54 @@ header h2 {
 }
 
 .separation-div {
-    -webkit-background-attachment: fixed !important;
-    -moz-background-attachment: fixed !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
-    background-position: center;
-    background-origin: center;
     width: 100%;
     filter: contrast(80%);
+    overflow: hidden;
     -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
+.separation-div img {
+    position: absolute;
+    left: 0;
+    height: auto;
+}
 
 .first {
     height: 20vh;
-    background-image: url(../res/garage-castelsarrasin-montauban-header_between_4.jpg);
+}
+.first img {
+    width: 100%;
+    top: -125vh;
 }
 .second {
-    background-image: url(../res/garage-castelsarrasin-montauban-header_between.jpg);
     transition: 1s;
+}
+.second img {
+    width: 100%;
+    top: -150vh;
+}
+
+@media all and (max-width: 992px) {
+    .second img {
+        width: 100%;
+        top: -75vh;
+    }
+    .first img {
+        width: 100%;
+        top: -60vh;
+    }
+}
+@media all and (max-width: 768px) {
+    .second img {
+        width: 150%;
+        left: -25%;
+        top: -75vh;
+    }
+    .first img {
+        width: 100%;
+        top: -30vh;
+    }
 }
 
 .slider-h {
