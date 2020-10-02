@@ -29,9 +29,11 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(CarRepository $carRepository)
     {
-        return $this->render('main/index.html.twig', []);
+        return $this->render('main/index.html.twig', [
+            'cars' => $carRepository->findAll()
+        ]);
     }
 
     /**

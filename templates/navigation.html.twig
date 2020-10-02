@@ -91,8 +91,8 @@
                 <li class="nav-item mr-md-2">
                     {% if not app.user %}
                     <abbr title="Se connecter">
-                        <a class="nav-link" href="{{ path('authentification') }}" title="Authentification administration">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        <a class="nav-link" href="{{ path('authentification') }}">
+                            <i class="fa fa-lock" aria-hidden="true"></i> <span style="display: none;">Authentification</span>
                         </a>
                     </abbr>
                     {% else %}
