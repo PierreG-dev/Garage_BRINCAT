@@ -4,7 +4,6 @@
 
 {% block head %}
 <meta name="description" content="SARL Brincat, Garage FIAT à Castelsarrasin et à Montauban. Notre liste d'horaires et de contacts.">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js "></script>
 <link rel="canonical" href="https://www.sarlgaragebrincat.fr/contact">
 {% endblock %}
 
@@ -102,7 +101,7 @@
                         Avenue du Maréchal Leclerc, 82100, Castelsarrasin</a></li>
             </ul>
             <img src="{{ asset('res/garage-brincat-castelsarrasin.jpg') }}"
-                alt="garage brincat castelsarrasin extérieur" class="photo first-photo">
+                alt="extérieur de la concession automobile de castelsarrasin" class="photo first-photo">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column">
             <h3>Montauban</h3>
@@ -115,7 +114,7 @@
                         href="https://www.google.com/maps/dir//Garage+Brincat+Montauban/@44.0029838,1.2705296,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12ac0e71dd95a939:0xa2bbec5c870dec2a!2m2!1d1.3405694!2d44.0030052" rel="noreferrer nofollow noopener" target="_blank">426
                         Avenue de Toulouse 82000 Montauban,France</a></li>
             </ul>
-            <img src="{{ asset('res/garage-brincat-montauban.jpg') }}" alt="garage brincat montauban extérieur"
+            <img src="{{ asset('res/garage-brincat-montauban.jpg') }}" alt="extérieur de la concession automobile de montauban"
                 class="photo">
         </div>
 
@@ -152,7 +151,7 @@
 </div>
 
 <div class="separator">
-    <img class="rellax" data-rellax-speed="-3" src="{{ asset('res/garage-castelsarrasin-montauban-header-3.jpg') }}" alt="garage castelsarrasin montauban interieur voiture">
+    <img class="rellax" data-rellax-speed="-3" src="{{ asset('res/garage-castelsarrasin-montauban-header-3.jpg') }}" alt="intérieur d'une fiat 500">
 </div>
 
 <div class="container-fluid text-light form-container">
@@ -173,7 +172,14 @@
     </div>
 </div>
 
-<script>
-    var rellax = new Rellax('.rellax');
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js "></script>
+<script defer>
+    var rellax = null;
+    event = setInterval(() => {
+        if (!rellax && Rellax) {
+            rellax = new Rellax('.rellax')
+            clearInterval(event)
+        };
+    }, 500);
 </script>
 {% endblock %}
