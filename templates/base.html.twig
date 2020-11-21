@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="author" content="Pierre GODINO">
-        {% block stylesheets %}
-            <link rel="icon" href="{{ asset('res/garage-castelsarrasin-montauban-brincat.ico')}}" />
-            <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="'https://fonts.googleapis.com/css2?family=Roboto&display=swap'">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        {% endblock %}
-        {% block head %}
-        
-        {% endblock %}
-    </head>
-    <body>
 
-        <style>
-            #wrapper {
-                width: 100%;
-                height: 100%;
-                overflow: hidden !important;
-            }
-        </style>
-        {% block navbar %}
-            {% include "navigation.html.twig" %}
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Pierre GODINO">
+    {% block stylesheets %}
+    <link rel="icon" href="{{ asset('res/garage-castelsarrasin-montauban-brincat.ico')}}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" media="none" onload="if(media!='all')media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"></noscript>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        media="none" onload="if(media!='all')media='all'"><noscript>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        </noscript>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" media="none"
+        onload="if(media!='all')media='all'"><noscript>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" media="none"
+        onload="if(media!='all')media='all'"><noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"></noscript>
+    {% endblock %}
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+<body>
+    {% block navbar %}
+    {% include "navigation.html.twig" %}
+    {% endblock %}
+    <div id="wrapper">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            crossorigin="anonymous"></script>
         {% endblock %}
-        <div id="wrapper">
-            {% block body %}{% endblock %}
-            {% block javascripts %}
-                <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-                <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-                <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-            {% endblock %}
 
         {% block footer %}
-            {% include "footer.html.twig" %}
+        {% include "footer.html.twig" %}
         {% endblock %}
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>

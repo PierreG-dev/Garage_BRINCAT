@@ -8,7 +8,6 @@
             display: block;
         }
     }
-    
 </style>
 
 {% if app.user %}
@@ -28,14 +27,17 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-5 d-md-none d-lg-block"><i class="fa fa-envelope text-light"
                             aria-hidden="true"></i>
-                        <a rel="noreferrer nofollow noopener" target="_blank" href="mailto:sarlgaragebrincat@orange.fr" class="text-light">sarlgaragebrincat@orange.fr</a>
+                        <a rel="noreferrer nofollow noopener" target="_blank" href="mailto:sarlgaragebrincat@orange.fr"
+                            class="text-light">sarlgaragebrincat@orange.fr</a>
                     </div>
                     <div class="col-lg-3 d-md-none d-lg-block"><i class="fa fa-phone text-light" aria-hidden="true"></i>
-                        <a rel="noreferrer nofollow noopener" target="_blank" href="tel:+05 63 32 33 78" class="text-light">05 63 32 33 78</a>
+                        <a rel="noreferrer nofollow noopener" target="_blank" href="tel:+05 63 32 33 78"
+                            class="text-light">05 63 32 33 78</a>
                     </div>
                     <div class="col-lg-4 col-md-9 d-flex align-items-center">
                         <i class="text-light" style="font-weight: 600">Protégeons nous les uns les autres</i>
-                        <img src="{{ asset('res/garage-castelsarrasin-montauban-masque-obligatoire.png') }}" alt="garage castelsarrasin montauban port du masque obligatoire"
+                        <img src="{{ asset('res/garage-castelsarrasin-montauban-masque-obligatoire.png') }}"
+                            alt="garage castelsarrasin montauban port du masque obligatoire"
                             style="width: 70px;height: auto;margin-left: 10px;">
                     </div>
                 </div>
@@ -82,7 +84,7 @@
                 {% if app.user %}
                 <li>
                     <abbr title="Administration">
-                        <a class="nav-link" href="{{ path('admin') }}" title="Zone d'administration">
+                        <a class="nav-link" href="{{ path('admin') }}">
                             <i class="fa fa-wrench" aria-hidden="true"></i>
                         </a>
                     </abbr>
@@ -92,7 +94,7 @@
                     {% if not app.user %}
                     <abbr title="Se connecter">
                         <a class="nav-link" href="{{ path('authentification') }}">
-                            <i class="fa fa-lock" aria-hidden="true"></i> <span style="display: none;">Authentification</span>
+                            <i class="fa fa-lock" aria-hidden="true"></i>
                         </a>
                     </abbr>
                     {% else %}
