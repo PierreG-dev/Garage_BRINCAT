@@ -23,7 +23,15 @@ a:hover {
     height: 100%;
     overflow: hidden !important;
 }
+.navbar-brand {
+        display: none;
+    }
 
+    @media all and (max-width: 768px) {
+        .navbar-brand {
+            display: block;
+        }
+    }
 
 /* HEADER */
 header {
