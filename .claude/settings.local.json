@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(grep -o \"rgb\\\\|#[0-9a-f]\\\\{3,6\\\\}\" /c/Users/Pierre/Documents/code/perso/Garage_BRINCAT/public/css/style.css)",
+      "Bash(grep -oE \"\\(#[0-9a-fA-F]{3,6}|rgb\\\\\\([^\\)]+\\\\\\)|rgba\\\\\\([^\\)]+\\\\\\)\\)\" /c/Users/Pierre/Documents/code/perso/Garage_BRINCAT/public/css/style.css)",
+      "Bash(xargs ls:*)",
+      "Bash(find /c/Users/Pierre/Documents/code/perso/Garage_BRINCAT/src -name \"*.php\" -exec grep -l \"SARL\\\\|Brincat\\\\|email\\\\|phone\" {} \\\\;)",
+      "Read(//c/Users/Pierre/Documents/code/perso/**)",
+      "Bash(npx create-next-app@14 Garage_BRINCAT_Next --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npx create-next-app@14 garage-brincat-next --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\images\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\garage-castelsarrasin-montauban-header-1.jpg\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\images\\\\hero-1.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\garage-castelsarrasin-montauban-header-2.jpg\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\images\\\\hero-2.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\garage-castelsarrasin-montauban-header-3.jpg\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\images\\\\hero-3.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\garage-castelsarrasin-montauban-header_between.jpg\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\images\\\\separator-1.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\favicon.ico\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\favicon.ico\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\favicon.svg\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\favicon.svg\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\favicon-96x96.png\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\favicon-96x96.png\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\apple-touch-icon.png\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\apple-touch-icon.png\")",
+      "Bash(cp \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\Garage_BRINCAT\\\\public\\\\res\\\\web-app-manifest-192x192.png\" \"C:\\\\Users\\\\Pierre\\\\Documents\\\\code\\\\perso\\\\garage-brincat-next\\\\public\\\\web-app-manifest-192x192.png\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(xargs sed:*)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1600&q=80\" -o hero-1.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1600&q=80\" -o hero-2.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80\" -o hero-3.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&q=80\" -o about.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80\" -o garage-castelsarrasin.jpg)",
+      "Bash(curl -sL \"https://loremflickr.com/800/600/car,mechanic,inspection\" -o service-expertise.jpg)",
+      "Bash(curl -sL \"https://loremflickr.com/800/600/car,repair,workshop\" -o service-reparation.jpg)",
+      "Bash(curl -sL \"https://loremflickr.com/800/600/tow,truck,breakdown\" -o service-depannage.jpg)",
+      "Bash(curl -sL \"https://loremflickr.com/800/600/car,maintenance,oil\" -o service-revision.jpg)",
+      "Bash(curl -sL \"https://loremflickr.com/800/600/car,dealership,sale\" -o service-vente.jpg)",
+      "Bash(ls -lh \"c:/Users/Pierre/Documents/code/perso/Garage_BRINCAT/public/images/service-\"*)"
+    ]
+  }
+}
