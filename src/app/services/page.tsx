@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SERVICES } from '@/lib/data'
+import { SERVICES, CANONICAL_URL } from '@/lib/data'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 export const metadata: Metadata = {
@@ -9,11 +9,72 @@ export const metadata: Metadata = {
   description:
     'Découvrez tous les services du Garage BRINCAT : réparation toutes marques, carrosserie peinture, dépannage remorquage, révision, expertise et programme de garantie à Castelsarrasin et Montauban.',
   alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Nos Services — Mécanique, Carrosserie, Dépannage | Garage BRINCAT',
+    description:
+      'Découvrez tous les services du Garage BRINCAT : réparation toutes marques, carrosserie peinture, dépannage remorquage, révision, expertise et programme de garantie à Castelsarrasin et Montauban.',
+    url: '/services',
+    images: [
+      {
+        url: '/images/service-reparation.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Atelier mécanique Garage BRINCAT — Réparation toutes marques',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nos Services — Mécanique, Carrosserie, Dépannage | Garage BRINCAT',
+    description:
+      'Découvrez tous les services du Garage BRINCAT : réparation toutes marques, carrosserie peinture, dépannage remorquage, révision, expertise et programme de garantie.',
+    images: ['/images/service-reparation.jpg'],
+  },
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: CANONICAL_URL },
+    { '@type': 'ListItem', position: 2, name: 'Nos Services', item: `${CANONICAL_URL}/services` },
+  ],
+}
+
+const servicesJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Services Garage BRINCAT',
+  description: 'Liste des services automobiles proposés par le Garage BRINCAT en Tarn-et-Garonne',
+  itemListElement: SERVICES.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Service',
+      name: service.title,
+      description: service.longDesc,
+      provider: {
+        '@type': 'AutoRepair',
+        name: 'Garage BRINCAT',
+        url: CANONICAL_URL,
+      },
+      areaServed: ['Castelsarrasin', 'Montauban', 'Tarn-et-Garonne'],
+      url: `${CANONICAL_URL}/services#${service.slug}`,
+    },
+  })),
 }
 
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
       {/* Page hero */}
       <section className="relative h-64 sm:h-80 overflow-hidden">
         <Image

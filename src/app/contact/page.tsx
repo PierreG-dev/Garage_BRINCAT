@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { LOCATIONS } from '@/lib/data'
+import { LOCATIONS, CANONICAL_URL } from '@/lib/data'
 import LocationCard from '@/components/contact/LocationCard'
 import ContactForm from '@/components/contact/ContactForm'
 import SectionHeading from '@/components/ui/SectionHeading'
@@ -9,11 +9,70 @@ export const metadata: Metadata = {
   description:
     'Contactez le Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou Montauban (05 63 66 29 61). Formulaire de contact, adresses et horaires d\'ouverture.',
   alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contactez le Garage BRINCAT — Castelsarrasin & Montauban',
+    description:
+      'Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou Montauban (05 63 66 29 61). Formulaire de contact, adresses et horaires d\'ouverture.',
+    url: '/contact',
+    images: [
+      {
+        url: '/images/garage-castelsarrasin.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Garage BRINCAT — Contactez-nous à Castelsarrasin et Montauban',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contactez le Garage BRINCAT — Castelsarrasin & Montauban',
+    description:
+      'Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou Montauban (05 63 66 29 61). Formulaire, adresses et horaires.',
+    images: ['/images/garage-castelsarrasin.jpg'],
+  },
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: CANONICAL_URL },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: `${CANONICAL_URL}/contact` },
+  ],
+}
+
+const contactPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contacter le Garage BRINCAT',
+  url: `${CANONICAL_URL}/contact`,
+  mainEntity: {
+    '@type': 'AutoRepair',
+    name: 'Garage BRINCAT',
+    url: CANONICAL_URL,
+    telephone: '05 63 32 33 78',
+    email: 'sarlgaragebrincat@orange.fr',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '93 Avenue du Maréchal Leclerc',
+      addressLocality: 'Castelsarrasin',
+      postalCode: '82100',
+      addressCountry: 'FR',
+    },
+  },
 }
 
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-brand-dark pt-28 pb-12 lg:pt-36 lg:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

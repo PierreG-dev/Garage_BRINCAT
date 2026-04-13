@@ -12,6 +12,27 @@ export const metadata: Metadata = {
   description:
     'SARL BRINCAT, votre garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé, dépannage. Famille professionnelle depuis 50 ans.',
   alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Garage BRINCAT — Concessionnaire FIAT Castelsarrasin & Montauban',
+    description:
+      'SARL BRINCAT, votre garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé, dépannage. Famille professionnelle depuis 50 ans.',
+    url: '/',
+    images: [
+      {
+        url: '/images/garage-castelsarrasin.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Garage BRINCAT Castelsarrasin — Concessionnaire FIAT',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Garage BRINCAT — Concessionnaire FIAT Castelsarrasin & Montauban',
+    description:
+      'SARL BRINCAT, votre garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé, dépannage. Famille professionnelle depuis 50 ans.',
+    images: ['/images/garage-castelsarrasin.jpg'],
+  },
 }
 
 export default function HomePage() {

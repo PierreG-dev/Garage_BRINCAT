@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { TEAM_MEMBERS, LOCATIONS } from '@/lib/data'
+import { TEAM_MEMBERS, LOCATIONS, CANONICAL_URL, COMPANY_NAME } from '@/lib/data'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 export const metadata: Metadata = {
@@ -9,6 +9,52 @@ export const metadata: Metadata = {
   description:
     'Découvrez l\'histoire du Garage BRINCAT, entreprise familiale fondée il y a plus de 50 ans en Tarn-et-Garonne. Concessionnaire FIAT à Castelsarrasin et Montauban.',
   alternates: { canonical: '/a-propos' },
+  openGraph: {
+    title: 'Notre Histoire — Garage BRINCAT, 50 ans d\'expertise FIAT',
+    description:
+      'Entreprise familiale fondée il y a plus de 50 ans, le Garage BRINCAT est concessionnaire FIAT à Castelsarrasin et Montauban en Tarn-et-Garonne.',
+    url: '/a-propos',
+    images: [
+      {
+        url: '/images/about.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Garage BRINCAT — Entreprise familiale depuis 50 ans',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Notre Histoire — Garage BRINCAT, 50 ans d\'expertise FIAT',
+    description:
+      'Entreprise familiale fondée il y a plus de 50 ans, concessionnaire FIAT à Castelsarrasin et Montauban.',
+    images: ['/images/about.jpg'],
+  },
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: CANONICAL_URL },
+    { '@type': 'ListItem', position: 2, name: 'À Propos', item: `${CANONICAL_URL}/a-propos` },
+  ],
+}
+
+const aboutPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: `À propos de ${COMPANY_NAME}`,
+  description: 'Histoire et valeurs du Garage BRINCAT, entreprise familiale spécialiste FIAT depuis plus de 50 ans en Tarn-et-Garonne.',
+  url: `${CANONICAL_URL}/a-propos`,
+  mainEntity: {
+    '@type': 'Organization',
+    name: COMPANY_NAME,
+    foundingDate: '1970',
+    description: 'Entreprise familiale spécialiste FIAT, concessionnaire et réparateur toutes marques en Tarn-et-Garonne.',
+    numberOfEmployees: { '@type': 'QuantitativeValue', value: 10 },
+    areaServed: ['Castelsarrasin', 'Montauban', 'Tarn-et-Garonne'],
+  },
 }
 
 const milestones = [
@@ -37,6 +83,14 @@ const milestones = [
 export default function AProposPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative h-72 sm:h-96 overflow-hidden">
         <Image
