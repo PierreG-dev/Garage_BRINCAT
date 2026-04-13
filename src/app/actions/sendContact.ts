@@ -21,12 +21,13 @@ export async function sendContactAction(
 
   const { name, phone, email, location, message } = parsed.data
   const locationLabel = location === 'castelsarrasin' ? 'Castelsarrasin' : 'Montauban'
+  const locationEmail = location === 'castelsarrasin' ? 'sarlgaragebrincat@orange.fr' : 'sarl.brincat@wanadoo.fr'
 
   try {
     const transporter = createTransporter()
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
-      to: 'sarlgaragebrincat@orange.fr',
+      to: locationEmail,
       replyTo: email || undefined,
       subject: `Nouveau message depuis le site — ${locationLabel}`,
       text: [
