@@ -207,6 +207,7 @@ export default function CampingCarPage() {
           alt="Camping-car — Garage BRINCAT spécialiste agréé"
           fill
           className="object-cover"
+          sizes="100vw"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/85 to-brand-dark/40" />
@@ -253,7 +254,7 @@ export default function CampingCarPage() {
             <div className="relative">
               <div className="relative h-80 rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/camping-car.png"
+                  src="/images/camping-car.jpg"
                   alt="Camping-car entretien"
                   fill
                   className="object-cover"

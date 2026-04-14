@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 const slides = [
   {
@@ -31,6 +31,25 @@ const slides = [
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0)
   const [transitioning, setTransitioning] = useState(false)
+  // Track which slides have been activated so we only mount their Images lazily.
+  // Slide 0 always pre-rendered (above the fold). Next slide pre-fetched as soon
+  // as the current one becomes active so the transition is instant.
+  const [loadedSlides, setLoadedSlides] = useState<Set<number>>(new Set([0]))
+  const prevCurrentRef = useRef(0)
+
+  useEffect(() => {
+    if (current !== prevCurrentRef.current) {
+      prevCurrentRef.current = current
+    }
+    const next = (current + 1) % slides.length
+    setLoadedSlides(prev => {
+      if (prev.has(current) && prev.has(next)) return prev
+      const updated = new Set(prev)
+      updated.add(current)
+      updated.add(next)
+      return updated
+    })
+  }, [current])
 
   const goTo = useCallback(
     (index: number) => {
@@ -70,14 +89,17 @@ export default function HeroCarousel() {
           }`}
           aria-hidden={i !== current}
         >
-          <Image
-            src={s.src}
-            alt={s.alt}
-            fill
-            className="object-cover"
-            priority={i === 0}
-            quality={85}
-          />
+          {loadedSlides.has(i) && (
+            <Image
+              src={s.src}
+              alt={s.alt}
+              fill
+              className="object-cover"
+              priority={i === 0}
+              sizes="100vw"
+              quality={85}
+            />
+          )}
         </div>
       ))}
 

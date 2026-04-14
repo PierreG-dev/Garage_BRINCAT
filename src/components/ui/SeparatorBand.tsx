@@ -22,7 +22,8 @@ export default function SeparatorBand({
         alt={alt}
         fill
         className="object-cover"
-        quality={75}
+        sizes="100vw"
+        quality={70}
       />
       <div className="absolute inset-0 bg-brand-dark/40" />
     </div>
