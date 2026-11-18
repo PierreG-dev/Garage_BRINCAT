@@ -4,8 +4,8 @@
   "description": "Spécialiste FIAT à Castelsarrasin et Montauban — Réparation, entretien, camping-car agréé",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#1C232B",
-  "background_color": "#1C232B",
+  "theme_color": "#0F172A",
+  "background_color": "#0F172A",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
