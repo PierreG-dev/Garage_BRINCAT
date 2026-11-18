@@ -6,34 +6,18 @@ import AboutBand from '@/components/home/AboutBand'
 import SeparatorBand from '@/components/ui/SeparatorBand'
 import Link from 'next/link'
 import { LOCATIONS } from '@/lib/data'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Garage BRINCAT — Concessionnaire FIAT Castelsarrasin & Montauban',
+export const metadata: Metadata = pageMetadata({
+  title: 'Garage FIAT à Castelsarrasin et Montauban | Garage BRINCAT',
+  absoluteTitle: true,
+  socialTitle: 'Garage BRINCAT, concessionnaire FIAT à Castelsarrasin et Montauban',
   description:
-    'SARL BRINCAT, votre garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé, dépannage. Famille professionnelle depuis 50 ans.',
-  alternates: { canonical: '/' },
-  openGraph: {
-    title: 'Garage BRINCAT — Concessionnaire FIAT Castelsarrasin & Montauban',
-    description:
-      'SARL BRINCAT, votre garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé, dépannage. Famille professionnelle depuis 50 ans.',
-    url: '/',
-    images: [
-      {
-        url: '/images/garage-castelsarrasin.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Garage BRINCAT Castelsarrasin — Concessionnaire FIAT',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Garage BRINCAT — Concessionnaire FIAT Castelsarrasin & Montauban',
-    description:
-      'SARL BRINCAT, votre garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé, dépannage. Famille professionnelle depuis 50 ans.',
-    images: ['/images/garage-castelsarrasin.jpg'],
-  },
-}
+    'Garage BRINCAT, concessionnaire FIAT à Castelsarrasin et Montauban depuis plus de 50 ans. Réparation toutes marques, carrosserie, entretien camping-car et dépannage en Tarn-et-Garonne.',
+  path: '/',
+  image: '/images/og/home.jpg',
+  imageAlt: 'Garage BRINCAT, concessionnaire FIAT à Castelsarrasin et Montauban',
+})
 
 export default function HomePage() {
   return (
@@ -54,7 +38,7 @@ export default function HomePage() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span className="font-medium">{loc.city}</span> — {loc.phone}
+                  <span className="font-medium">{loc.city} :</span> {loc.phone}
                 </a>
               ))}
             </div>
@@ -79,14 +63,14 @@ export default function HomePage() {
           <div className="bg-brand-dark rounded-2xl p-8 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div>
               <p className="font-display text-xs uppercase tracking-widest text-accent mb-3">
-                Spécialité
+                Garage agréé camping-car
               </p>
               <h2 className="font-display font-bold text-3xl lg:text-4xl uppercase text-white leading-tight">
-                Spécialiste Camping-Car<br />Agréé
+                Entretien et réparation<br />de camping-cars
               </h2>
               <p className="mt-4 text-white/60 font-sans text-base max-w-lg">
-                Révision avant voyage, entretien, réparation — nous sommes agréés et certifiés pour
-                tous vos besoins en camping-car.
+                Révision avant les vacances, entretien courant, panne en route : on est agréés
+                camping-car et on travaille sur toutes les marques.
               </p>
             </div>
             <Link

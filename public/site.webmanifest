@@ -1,7 +1,7 @@
 {
-  "name": "Garage BRINCAT — Concessionnaire FIAT",
+  "name": "Garage BRINCAT, concessionnaire FIAT",
   "short_name": "Garage BRINCAT",
-  "description": "Spécialiste FIAT à Castelsarrasin et Montauban — Réparation, entretien, camping-car agréé",
+  "description": "Garage FIAT à Castelsarrasin et Montauban. Réparation toutes marques, entretien, camping-car agréé.",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#0F172A",

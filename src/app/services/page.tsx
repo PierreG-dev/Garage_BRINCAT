@@ -2,44 +2,20 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SERVICES, CANONICAL_URL } from '@/lib/data'
+import { pageMetadata, breadcrumbJsonLd, ORGANIZATION_ID } from '@/lib/seo'
 import SectionHeading from '@/components/ui/SectionHeading'
 
-export const metadata: Metadata = {
-  title: 'Nos Services — Mécanique, Carrosserie, Dépannage',
+export const metadata: Metadata = pageMetadata({
+  title: 'Mécanique, carrosserie et dépannage',
+  socialTitle: 'Mécanique, carrosserie et dépannage à Castelsarrasin et Montauban',
   description:
-    'Découvrez tous les services du Garage BRINCAT : réparation toutes marques, carrosserie peinture, dépannage remorquage, révision, expertise et programme de garantie à Castelsarrasin et Montauban.',
-  alternates: { canonical: '/services' },
-  openGraph: {
-    title: 'Nos Services — Mécanique, Carrosserie, Dépannage | Garage BRINCAT',
-    description:
-      'Découvrez tous les services du Garage BRINCAT : réparation toutes marques, carrosserie peinture, dépannage remorquage, révision, expertise et programme de garantie à Castelsarrasin et Montauban.',
-    url: '/services',
-    images: [
-      {
-        url: '/images/service-reparation.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Atelier mécanique Garage BRINCAT — Réparation toutes marques',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nos Services — Mécanique, Carrosserie, Dépannage | Garage BRINCAT',
-    description:
-      'Découvrez tous les services du Garage BRINCAT : réparation toutes marques, carrosserie peinture, dépannage remorquage, révision, expertise et programme de garantie.',
-    images: ['/images/service-reparation.jpg'],
-  },
-}
+    'Réparation toutes marques, carrosserie et peinture, dépannage et remorquage, révision, diagnostic et vente de FIAT neuves et d\'occasion. Garage BRINCAT à Castelsarrasin et Montauban.',
+  path: '/services',
+  image: '/images/og/services.jpg',
+  imageAlt: 'Atelier mécanique du Garage BRINCAT',
+})
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Accueil', item: CANONICAL_URL },
-    { '@type': 'ListItem', position: 2, name: 'Nos Services', item: `${CANONICAL_URL}/services` },
-  ],
-}
+const breadcrumb = breadcrumbJsonLd([{ name: 'Nos services', path: '/services' }])
 
 const servicesJsonLd = {
   '@context': 'https://schema.org',
@@ -53,11 +29,8 @@ const servicesJsonLd = {
       '@type': 'Service',
       name: service.title,
       description: service.longDesc,
-      provider: {
-        '@type': 'AutoRepair',
-        name: 'Garage BRINCAT',
-        url: CANONICAL_URL,
-      },
+      provider: { '@id': ORGANIZATION_ID },
+      serviceType: service.title,
       areaServed: ['Castelsarrasin', 'Montauban', 'Tarn-et-Garonne'],
       url: `${CANONICAL_URL}/services#${service.slug}`,
     },
@@ -69,7 +42,7 @@ export default function ServicesPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <script
         type="application/ld+json"
@@ -79,7 +52,7 @@ export default function ServicesPage() {
       <section className="relative h-64 sm:h-80 overflow-hidden">
         <Image
           src="/images/service-reparation.jpg"
-          alt="Atelier mécanique Garage BRINCAT"
+          alt="Atelier mécanique du Garage BRINCAT"
           fill
           className="object-cover"
           priority
@@ -91,7 +64,7 @@ export default function ServicesPage() {
               Garage BRINCAT
             </p>
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl uppercase text-white">
-              Nos Services
+              Nos services
             </h1>
           </div>
         </div>
@@ -102,9 +75,9 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <SectionHeading
-              eyebrow="Expert automobile"
-              title="Un Atelier Complet"
-              subtitle="De la révision d'entretien au dépannage d'urgence, notre atelier prend en charge tous vos besoins automobiles. Toutes marques acceptées, équipement de diagnostic certifié FIAT."
+              eyebrow="L'atelier"
+              title="Ce qu'on fait au garage"
+              subtitle="Une vidange, une carrosserie à refaire, une panne sur la route ou une voiture à acheter : on s'en occupe à Castelsarrasin comme à Montauban. On travaille sur toutes les marques, pas seulement sur les FIAT."
             />
           </div>
         </div>
@@ -163,10 +136,10 @@ export default function ServicesPage() {
       <section className="bg-brand-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display font-bold text-3xl lg:text-4xl uppercase text-white mb-4">
-            Un Besoin Spécifique ?
+            Une demande particulière
           </h2>
           <p className="text-white/60 font-sans text-base mb-8 max-w-xl mx-auto">
-            Contactez-nous directement pour toute demande particulière. Nous vous répondrons dans les plus brefs délais.
+            Appelez-nous ou laissez-nous un message en expliquant votre besoin. On vous répond rapidement.
           </p>
           <Link
             href="/contact"

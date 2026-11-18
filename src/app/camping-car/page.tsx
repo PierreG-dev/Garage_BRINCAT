@@ -3,67 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { CANONICAL_URL } from "@/lib/data";
+import { pageMetadata, breadcrumbJsonLd, ORGANIZATION_ID } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Spécialiste Camping-Car Agréé — Castelsarrasin & Montauban",
+export const metadata: Metadata = pageMetadata({
+  title: "Garage agréé camping-car à Castelsarrasin et Montauban",
+  socialTitle: "Entretien et réparation de camping-cars en Tarn-et-Garonne",
   description:
-    "Garage BRINCAT, spécialiste agréé camping-car en Tarn-et-Garonne. Révision avant voyage, entretien, réparation, dépannage remorquage pour camping-cars toutes marques.",
-  alternates: { canonical: "/camping-car" },
-  openGraph: {
-    title: "Spécialiste Camping-Car Agréé — Garage BRINCAT Tarn-et-Garonne",
-    description:
-      "Garage BRINCAT, spécialiste agréé camping-car en Tarn-et-Garonne. Révision avant voyage, entretien, réparation, dépannage remorquage pour camping-cars toutes marques.",
-    url: "/camping-car",
-    images: [
-      {
-        url: "/images/camping-car-bg.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Garage BRINCAT — Spécialiste Camping-Car Agréé",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Spécialiste Camping-Car Agréé — Garage BRINCAT Tarn-et-Garonne",
-    description:
-      "Spécialiste agréé camping-car en Tarn-et-Garonne. Révision avant voyage, entretien, réparation, dépannage remorquage toutes marques.",
-    images: ["/images/camping-car-bg.jpg"],
-  },
-};
+    "Le Garage BRINCAT est agréé camping-car en Tarn-et-Garonne. Révision avant les vacances, entretien, réparation et remorquage de camping-cars toutes marques à Castelsarrasin et Montauban.",
+  path: "/camping-car",
+  image: "/images/og/camping-car.jpg",
+  imageAlt: "Entretien de camping-car au Garage BRINCAT",
+});
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Accueil", item: CANONICAL_URL },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Camping-Car",
-      item: `${CANONICAL_URL}/camping-car`,
-    },
-  ],
-};
+const breadcrumb = breadcrumbJsonLd([{ name: "Camping-car", path: "/camping-car" }]);
 
 const campingCarServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Spécialiste Camping-Car Agréé",
+  name: "Entretien et réparation de camping-cars",
   description:
     "Révision avant voyage, entretien, réparation et dépannage remorquage pour camping-cars toutes marques en Tarn-et-Garonne.",
-  provider: {
-    "@type": "AutoRepair",
-    name: "Garage BRINCAT",
-    url: CANONICAL_URL,
-    telephone: "05 63 32 33 78",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Castelsarrasin",
-      postalCode: "82100",
-      addressCountry: "FR",
-    },
-  },
+  provider: { "@id": ORGANIZATION_ID },
+  url: `${CANONICAL_URL}/camping-car`,
   areaServed: ["Castelsarrasin", "Montauban", "Tarn-et-Garonne", "Occitanie"],
   serviceType: "Réparation et entretien camping-car",
   hasOfferCatalog: {
@@ -108,9 +69,9 @@ const campingCarServiceJsonLd = {
 
 const features = [
   {
-    title: "Révision Pré-Voyage",
+    title: "Révision avant le départ",
     description:
-      "Avant votre départ, nous contrôlons tous les points essentiels de votre camping-car : freins, pneumatiques, huiles, éclairages, système électrique. Partez l'esprit tranquille.",
+      "Avant de partir, on vérifie votre camping-car de A à Z : freins, pneus, niveaux, éclairage et circuit électrique. Mieux vaut le faire au garage que sur une aire d'autoroute.",
     icon: (
       <path
         strokeLinecap="round"
@@ -121,9 +82,9 @@ const features = [
     ),
   },
   {
-    title: "Entretien & Révision",
+    title: "Entretien courant",
     description:
-      "Vidanges, filtres, courroies de distribution — nous assurons l'entretien complet selon les préconisations constructeur pour prolonger la durée de vie de votre véhicule.",
+      "Vidange, filtres, courroie de distribution : on suit le carnet d'entretien du constructeur. Un camping-car qui roule peu doit quand même être entretenu régulièrement.",
     icon: (
       <path
         strokeLinecap="round"
@@ -134,9 +95,9 @@ const features = [
     ),
   },
   {
-    title: "Réparation Toutes Marques",
+    title: "Réparation toutes marques",
     description:
-      "Fiat, Chausson, Rapido, Hymer, Pilote... Nos techniciens interviennent sur tous les modèles de camping-cars. Mécanique, carrosserie, bris de glace — nous gérons tout.",
+      "Fiat, Chausson, Rapido, Hymer, Pilote... On répare tous les modèles de camping-cars, que ce soit en mécanique, en carrosserie ou pour un pare-brise.",
     icon: (
       <path
         strokeLinecap="round"
@@ -147,9 +108,9 @@ const features = [
     ),
   },
   {
-    title: "Diagnostic Électronique",
+    title: "Diagnostic électronique",
     description:
-      "Équipés d'un matériel de diagnostic certifié FIAT, nous identifions rapidement toute anomalie électronique ou mécanique sur votre camping-car.",
+      "Avec notre valise de diagnostic certifiée FIAT, on trouve vite l'origine d'une panne ou d'un voyant allumé sur votre camping-car.",
     icon: (
       <path
         strokeLinecap="round"
@@ -160,9 +121,9 @@ const features = [
     ),
   },
   {
-    title: "Dépannage & Remorquage",
+    title: "Dépannage et remorquage",
     description:
-      "Dépanneur conventionné par des groupes d'assistance, nous intervenons en urgence en cas de panne sur route. Remorquage disponible pour tous types de camping-cars.",
+      "Nous sommes dépanneur conventionné par des compagnies d'assistance. Si votre camping-car tombe en panne sur la route, on peut venir le chercher et le remorquer.",
     icon: (
       <path
         strokeLinecap="round"
@@ -173,9 +134,9 @@ const features = [
     ),
   },
   {
-    title: "Agrément Officiel",
+    title: "Garage agréé",
     description:
-      "Notre garage bénéficie d'un agrément officiel pour l'entretien et la réparation de camping-cars. Votre garantie constructeur est préservée.",
+      "Le garage est agréé pour l'entretien et la réparation des camping-cars, toutes marques confondues.",
     icon: (
       <path
         strokeLinecap="round"
@@ -192,7 +153,7 @@ export default function CampingCarPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <script
         type="application/ld+json"
@@ -204,7 +165,7 @@ export default function CampingCarPage() {
       <section className="relative h-72 sm:h-96 overflow-hidden">
         <Image
           src="/images/camping-car-bg.jpg"
-          alt="Camping-car — Garage BRINCAT spécialiste agréé"
+          alt="Camping-car pris en charge par le Garage BRINCAT"
           fill
           className="object-cover"
           sizes="100vw"
@@ -214,12 +175,12 @@ export default function CampingCarPage() {
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-10 lg:pb-16 pt-24">
           <div>
             <p className="font-display text-xs uppercase tracking-widest text-accent mb-2">
-              Spécialité Garage BRINCAT
+              Garage BRINCAT
             </p>
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl uppercase text-white leading-tight">
-              Spécialiste
+              Entretien et réparation
               <br />
-              Camping-Car
+              de camping-cars
             </h1>
           </div>
         </div>
@@ -231,9 +192,9 @@ export default function CampingCarPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeading
-                eyebrow="Agrément officiel"
-                title="Votre Expert Camping-Car en Tarn-et-Garonne"
-                subtitle="Le Garage BRINCAT est spécialiste agréé pour l'entretien et la réparation de camping-cars. Que ce soit pour une révision avant votre prochain voyage ou une réparation après incident, notre équipe est formée pour prendre en charge tous types de camping-cars, toutes marques confondues."
+                eyebrow="Garage agréé camping-car"
+                title="Votre camping-car entre de bonnes mains en Tarn-et-Garonne"
+                subtitle="Le Garage BRINCAT est agréé pour entretenir et réparer les camping-cars. Révision avant les vacances, panne, choc ou simple vidange : on accueille tous les modèles et toutes les marques, à Castelsarrasin comme à Montauban."
               />
               <div className="flex flex-wrap gap-4 mt-2">
                 <Link
@@ -255,7 +216,7 @@ export default function CampingCarPage() {
               <div className="relative h-80 rounded-2xl overflow-hidden">
                 <Image
                   src="/images/camping-car.jpg"
-                  alt="Camping-car entretien"
+                  alt="Entretien d'un camping-car à l'atelier"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -263,7 +224,7 @@ export default function CampingCarPage() {
                 <div className="absolute inset-0 bg-brand-dark/20" />
               </div>
               <div className="absolute -bottom-3 -left-3 bg-accent text-white font-display font-bold text-sm uppercase tracking-wider px-5 py-3 rounded-xl shadow-lg">
-                Agrément Officiel
+                Garage agréé
               </div>
             </div>
           </div>
@@ -278,7 +239,7 @@ export default function CampingCarPage() {
               Nos prestations
             </p>
             <h2 className="font-display font-bold text-4xl lg:text-5xl uppercase text-white">
-              Ce Que Nous Proposons
+              Ce qu&apos;on fait pour votre camping-car
             </h2>
             <div
               className="mt-4 w-12 h-0.5 bg-accent mx-auto"
@@ -319,14 +280,13 @@ export default function CampingCarPage() {
       <section className="py-16 lg:py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="font-display text-xs uppercase tracking-widest text-accent mb-3">
-            Prêt pour la route ?
+            Avant les vacances
           </p>
           <h2 className="font-display font-bold text-3xl lg:text-4xl uppercase text-brand-dark mb-4">
-            Révisez Avant Votre Départ
+            Faites réviser votre camping-car avant de partir
           </h2>
           <p className="text-brand-muted font-sans text-base max-w-lg mx-auto mb-8">
-            Un camping-car bien entretenu, c&apos;est un voyage serein.
-            Contactez-nous pour programmer votre révision pré-départ.
+            Appelez-nous ou envoyez-nous un message pour fixer une date de révision.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link

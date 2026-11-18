@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { NAV_LINKS } from '@/lib/data'
+
+export const metadata: Metadata = {
+  title: 'Page introuvable',
+  robots: { index: false, follow: true },
+}
 
 export default function NotFound() {
   return (

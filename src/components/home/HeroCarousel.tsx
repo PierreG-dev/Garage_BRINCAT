@@ -7,24 +7,24 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 const slides = [
   {
     src: '/images/hero-1.jpg',
-    alt: 'Garage BRINCAT Castelsarrasin — Concessionnaire FIAT',
-    heading: 'Votre Expert\nAutomobile',
-    subheading: 'Concessionnaire FIAT à Castelsarrasin et Montauban depuis plus de 50 ans.',
+    alt: 'Le Garage BRINCAT à Castelsarrasin, concessionnaire FIAT',
+    heading: 'Votre garage\nFIAT',
+    subheading: 'Concessionnaire FIAT à Castelsarrasin et Montauban depuis plus de 50 ans. Entretien, réparation et vente.',
     cta: { label: 'Nos services', href: '/services' },
   },
   {
     src: '/images/hero-2.jpg',
-    alt: 'Réparation toutes marques — Garage BRINCAT',
-    heading: 'Réparation\nToutes Marques',
-    subheading: 'Mécanique, carrosserie, peinture et bris de glace. Diagnostic électronique certifié FIAT.',
+    alt: 'Réparation automobile toutes marques au Garage BRINCAT',
+    heading: 'Réparation\ntoutes marques',
+    subheading: 'Mécanique, carrosserie, peinture et bris de glace. Pas besoin d\'avoir une FIAT pour venir chez nous.',
     cta: { label: 'En savoir plus', href: '/services' },
   },
   {
     src: '/images/hero-3.jpg',
-    alt: 'Spécialiste camping-car agréé — Garage BRINCAT',
-    heading: 'Spécialiste\nCamping-Car',
-    subheading: 'Agréé et certifié pour l\'entretien et la réparation de camping-cars. Révision avant voyage.',
-    cta: { label: 'Découvrir', href: '/camping-car' },
+    alt: 'Entretien de camping-car au Garage BRINCAT, garage agréé',
+    heading: 'Garage agréé\ncamping-car',
+    subheading: 'Révision avant les vacances, entretien et réparation de camping-cars toutes marques.',
+    cta: { label: 'En savoir plus', href: '/camping-car' },
   },
 ]
 

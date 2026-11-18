@@ -16,13 +16,13 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-brand-muted text-sm font-sans leading-relaxed max-w-sm mb-6">
-              Entreprise familiale fondée il y a plus de 50 ans. Concessionnaire FIAT, spécialiste
-              camping-car, réparation toutes marques à Castelsarrasin et Montauban.
+              Garage familial depuis plus de 50 ans. Concessionnaire FIAT, réparation toutes
+              marques et entretien de camping-cars à Castelsarrasin et Montauban.
             </p>
             <div className="flex flex-col gap-2 text-sm text-brand-muted">
               {LOCATIONS.map((loc) => (
                 <div key={loc.id}>
-                  <span className="text-white font-medium">{loc.city}</span> —{' '}
+                  <span className="text-white font-medium">{loc.city} :</span>{' '}
                   <a
                     href={`tel:${loc.phone.replace(/\s/g, '')}`}
                     className="hover:text-accent transition-colors duration-200"

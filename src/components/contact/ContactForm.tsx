@@ -167,7 +167,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3 font-sans text-sm text-brand-dark placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition resize-none"
-          placeholder="Décrivez votre demande..."
+          placeholder="Décrivez votre demande"
         />
         <FieldError errors={state.errors} name="message" />
       </div>

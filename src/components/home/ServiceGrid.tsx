@@ -40,9 +40,9 @@ export default function ServiceGrid() {
     <section className="py-16 lg:py-24 bg-brand-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Ce que nous faisons"
+          eyebrow="L'atelier"
           title="Nos Services"
-          subtitle="Un atelier complet pour tous vos besoins automobiles. De la révision au dépannage, nous sommes à votre service du mardi au samedi."
+          subtitle="Entretien, réparation, dépannage ou achat d'une voiture : on s'occupe de tout, du mardi au samedi, à Castelsarrasin et à Montauban."
           centered
         />
 

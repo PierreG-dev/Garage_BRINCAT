@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: '/api/',
     },
     sitemap: `${CANONICAL_URL}/sitemap.xml`,
+    host: CANONICAL_URL,
   }
 }

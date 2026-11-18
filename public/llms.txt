@@ -1,0 +1,34 @@
+# Garage BRINCAT (SARL BRINCAT & BRINCAT fils)
+
+> Garage familial en Tarn-et-Garonne (82) depuis plus de 50 ans. Concessionnaire FIAT avec deux garages, à Castelsarrasin et à Montauban. Réparation mécanique et carrosserie toutes marques, garage agréé camping-car, dépannage et remorquage, vente de FIAT neuves et d'occasion.
+
+Le Garage BRINCAT est tenu par la même famille depuis sa création. L'équipe compte dix personnes réparties sur les deux sites. Les deux garages sont ouverts du mardi au samedi et fermés le dimanche et le lundi.
+
+## Garages et horaires
+
+- Castelsarrasin : 93 Avenue du Maréchal Leclerc, 82100 Castelsarrasin. Tél. 05 63 32 33 78. Email : sarlgaragebrincat@orange.fr. Du mardi au vendredi de 8h à 12h et de 14h à 18h, le samedi de 8h à 12h et de 14h à 17h.
+- Montauban : 426 Avenue de Toulouse, 82000 Montauban. Tél. 05 63 66 29 61. Email : sarl.brincat@wanadoo.fr. Du mardi au vendredi de 8h à 12h et de 14h à 19h, le samedi de 8h à 12h et de 14h à 18h.
+
+## Services
+
+- Diagnostic électronique toutes marques, avec une valise de diagnostic certifiée FIAT. Bilan possible avant l'achat d'une occasion.
+- Réparation toutes marques : mécanique, carrosserie, peinture, bris de glace (pare-brise, vitrages), courroie de distribution.
+- Entretien et révision : vidange, filtres, freins, pneus, selon le carnet du constructeur.
+- Dépannage et remorquage : dépanneur conventionné par des compagnies d'assistance, autour de Castelsarrasin et Montauban.
+- Vente de véhicules : FIAT neuves et d'occasion, en stock ou sur commande.
+- Garantie sur les véhicules d'occasion vendus par le garage.
+- Camping-cars (garage agréé) : révision avant les vacances, entretien, réparation toutes marques (Fiat, Chausson, Rapido, Hymer, Pilote...), diagnostic électronique, remorquage.
+
+## Pages du site
+
+- [Accueil](https://www.sarlgaragebrincat.fr/): présentation du garage, services et avis clients
+- [Nos services](https://www.sarlgaragebrincat.fr/services): détail de chaque prestation (diagnostic, réparation, dépannage, révision, vente, garantie)
+- [Camping-car](https://www.sarlgaragebrincat.fr/camping-car): entretien et réparation de camping-cars, garage agréé
+- [À propos](https://www.sarlgaragebrincat.fr/a-propos): histoire de l'entreprise familiale et équipe
+- [Contact](https://www.sarlgaragebrincat.fr/contact): adresses, téléphones, horaires et formulaire de contact
+
+## Optional
+
+- [Fiche AlloGarage](https://www.allogarage.fr/garages/details-garage-SARL-Garage-Brincat-12985.html): avis clients et informations
+- [Fiche iDGARAGES](https://www.idgarages.com/fr-fr/garage/castelsarrasin/GA5948_sarl-garage-brincat): prise de rendez-vous et devis en ligne
+- [Plan du site](https://www.sarlgaragebrincat.fr/sitemap.xml)

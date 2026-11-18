@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link
               href="/"
               className="flex flex-col leading-tight group"
-              aria-label="Garage BRINCAT — Accueil"
+              aria-label="Garage BRINCAT, retour à l'accueil"
             >
               <span className="font-display font-bold text-white text-xl uppercase tracking-widest group-hover:text-accent transition-colors duration-200">
                 Garage BRINCAT

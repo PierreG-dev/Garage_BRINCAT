@@ -29,7 +29,7 @@ export async function sendContactAction(
       from: process.env.SMTP_FROM,
       to: locationEmail,
       replyTo: email || undefined,
-      subject: `Nouveau message depuis le site — ${locationLabel}`,
+      subject: `Nouveau message du site (${locationLabel})`,
       text: [
         `Nom : ${name}`,
         `Téléphone : ${phone}`,
@@ -41,7 +41,7 @@ export async function sendContactAction(
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="background:#2563EB;color:#fff;padding:16px 24px;margin:0;">
-            Nouveau message — Garage BRINCAT ${locationLabel}
+            Nouveau message pour le garage de ${locationLabel}
           </h2>
           <div style="padding:24px;background:#f5f4f2;">
             <p><strong>Nom :</strong> ${name}</p>
@@ -61,14 +61,14 @@ export async function sendContactAction(
     return {
       status: 'success',
       message:
-        'Votre message a bien été envoyé. Nous vous recontacterons dans les plus brefs délais.',
+        'Merci, votre message est bien parti. On vous recontacte rapidement.',
     }
   } catch (err) {
     console.error('[sendContactAction]', err)
     return {
       status: 'error',
       message:
-        'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous appeler directement.',
+        'Le message n\'a pas pu être envoyé. Réessayez dans un instant ou appelez-nous directement.',
     }
   }
 }

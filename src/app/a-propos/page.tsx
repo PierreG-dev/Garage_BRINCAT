@@ -1,82 +1,53 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { TEAM_MEMBERS, LOCATIONS, CANONICAL_URL, COMPANY_NAME } from '@/lib/data'
+import { TEAM_MEMBERS, LOCATIONS, CANONICAL_URL, COMPANY_SHORT } from '@/lib/data'
+import { pageMetadata, breadcrumbJsonLd, ORGANIZATION_ID, WEBSITE_ID } from '@/lib/seo'
 import SectionHeading from '@/components/ui/SectionHeading'
 
-export const metadata: Metadata = {
-  title: 'À Propos — Notre Histoire',
+export const metadata: Metadata = pageMetadata({
+  title: 'Garage familial FIAT depuis plus de 50 ans',
+  socialTitle: 'Garage BRINCAT : plus de 50 ans de garage familial FIAT',
   description:
-    'Découvrez l\'histoire du Garage BRINCAT, entreprise familiale fondée il y a plus de 50 ans en Tarn-et-Garonne. Concessionnaire FIAT à Castelsarrasin et Montauban.',
-  alternates: { canonical: '/a-propos' },
-  openGraph: {
-    title: 'Notre Histoire — Garage BRINCAT, 50 ans d\'expertise FIAT',
-    description:
-      'Entreprise familiale fondée il y a plus de 50 ans, le Garage BRINCAT est concessionnaire FIAT à Castelsarrasin et Montauban en Tarn-et-Garonne.',
-    url: '/a-propos',
-    images: [
-      {
-        url: '/images/about.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Garage BRINCAT — Entreprise familiale depuis 50 ans',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Notre Histoire — Garage BRINCAT, 50 ans d\'expertise FIAT',
-    description:
-      'Entreprise familiale fondée il y a plus de 50 ans, concessionnaire FIAT à Castelsarrasin et Montauban.',
-    images: ['/images/about.jpg'],
-  },
-}
+    'Le Garage BRINCAT est une entreprise familiale du Tarn-et-Garonne depuis plus de 50 ans. Concessionnaire FIAT à Castelsarrasin et Montauban, dix personnes à votre service.',
+  path: '/a-propos',
+  image: '/images/og/a-propos.jpg',
+  imageAlt: "L'équipe du Garage BRINCAT",
+})
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Accueil', item: CANONICAL_URL },
-    { '@type': 'ListItem', position: 2, name: 'À Propos', item: `${CANONICAL_URL}/a-propos` },
-  ],
-}
+const breadcrumb = breadcrumbJsonLd([{ name: 'À propos', path: '/a-propos' }])
 
 const aboutPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
-  name: `À propos de ${COMPANY_NAME}`,
-  description: 'Histoire et valeurs du Garage BRINCAT, entreprise familiale spécialiste FIAT depuis plus de 50 ans en Tarn-et-Garonne.',
+  name: `À propos du ${COMPANY_SHORT}`,
+  description: 'Histoire du Garage BRINCAT, garage familial FIAT en Tarn-et-Garonne depuis plus de 50 ans.',
   url: `${CANONICAL_URL}/a-propos`,
-  mainEntity: {
-    '@type': 'Organization',
-    name: COMPANY_NAME,
-    foundingDate: '1970',
-    description: 'Entreprise familiale spécialiste FIAT, concessionnaire et réparateur toutes marques en Tarn-et-Garonne.',
-    numberOfEmployees: { '@type': 'QuantitativeValue', value: 10 },
-    areaServed: ['Castelsarrasin', 'Montauban', 'Tarn-et-Garonne'],
-  },
+  inLanguage: 'fr-FR',
+  isPartOf: { '@id': WEBSITE_ID },
+  mainEntity: { '@id': ORGANIZATION_ID },
 }
 
 const milestones = [
   {
     period: 'Fondation',
-    description: 'Création de l\'entreprise familiale BRINCAT en Tarn-et-Garonne. Un garage indépendant, une passion de la mécanique.',
+    description: 'La famille BRINCAT ouvre son garage en Tarn-et-Garonne. C\'est alors un garage de mécanique indépendant.',
   },
   {
     period: 'Concession FIAT',
-    description: 'Le Garage BRINCAT devient concessionnaire officiel FIAT, renforçant son positionnement d\'expert automobile dans la région.',
+    description: 'Le garage devient concessionnaire FIAT. On vend désormais des voitures neuves en plus de les réparer.',
   },
   {
-    period: 'Agrément Camping-Car',
-    description: 'Obtention de l\'agrément officiel spécialiste camping-car. Une nouvelle expertise qui répond à une demande croissante de la clientèle.',
+    period: 'Agrément camping-car',
+    description: 'De plus en plus de clients arrivaient avec leur camping-car. On obtient l\'agrément pour les entretenir et les réparer.',
   },
   {
     period: 'Montauban',
-    description: 'Ouverture d\'un second établissement à Montauban, avenue de Toulouse. BRINCAT fils poursuit l\'expansion de l\'entreprise familiale.',
+    description: 'Ouverture d\'un deuxième garage à Montauban, avenue de Toulouse, avec la génération suivante : BRINCAT fils.',
   },
   {
     period: 'Aujourd\'hui',
-    description: 'Deux garages, dix professionnels, et la même ambition depuis l\'origine : un service d\'excellence pour chaque client.',
+    description: 'Deux garages, dix personnes, et toujours la même façon de travailler : on prend le temps de vous expliquer ce qu\'on fait sur votre voiture.',
   },
 ]
 
@@ -85,7 +56,7 @@ export default function AProposPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <script
         type="application/ld+json"
@@ -119,28 +90,26 @@ export default function AProposPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <SectionHeading
-                eyebrow="Notre ADN"
-                title="Une Entreprise Familiale"
+                eyebrow="Qui sommes-nous"
+                title="Une entreprise familiale"
               />
               <div className="space-y-5 text-brand-muted font-sans text-base leading-relaxed">
                 <p>
-                  SARL BRINCAT est une entreprise familiale fondée il y a plus de 50 ans, qui s&apos;est
-                  étendue au fil du temps pour devenir un acteur incontournable de l&apos;automobile en
-                  Tarn-et-Garonne.
+                  SARL BRINCAT est une entreprise familiale créée il y a plus de 50 ans. Le garage a
+                  grandi petit à petit et compte aujourd&apos;hui deux adresses en Tarn-et-Garonne,
+                  à Castelsarrasin et à Montauban.
                 </p>
                 <p>
-                  Durant toutes ces années, nous avons fièrement arboré le drapeau FIAT, une marque
-                  qui encore aujourd&apos;hui nous fait confiance pour vous proposer le meilleur — que ce
-                  soit en concession ou sur commande.
+                  Depuis toutes ces années, on travaille avec FIAT, qui nous fait toujours confiance
+                  aujourd&apos;hui. Vous pouvez acheter votre voiture sur place ou la commander chez nous.
                 </p>
                 <p>
-                  Nous vous proposons des réparations toutes marques, en mécanique, carrosserie
-                  peinture et changement de bris de glace, ainsi que le diagnostic électronique avec
-                  un appareil certifié FIAT.
+                  À l&apos;atelier, on répare toutes les marques : mécanique, carrosserie, peinture et
+                  bris de glace. Pour les pannes électroniques, on a un appareil de diagnostic certifié FIAT.
                 </p>
                 <p>
-                  Dépanneur conventionné par des groupes d&apos;assistance, nous sommes disponibles pour
-                  intervenir et pour toutes demandes de remorquage.
+                  Nous sommes aussi dépanneur conventionné par des compagnies d&apos;assistance. Si vous
+                  tombez en panne, on peut venir vous remorquer.
                 </p>
               </div>
             </div>
@@ -196,7 +165,7 @@ export default function AProposPage() {
               Notre parcours
             </p>
             <h2 className="font-display font-bold text-4xl lg:text-5xl uppercase text-white">
-              Les Grandes Étapes
+              Les grandes étapes
             </h2>
             <div className="mt-4 w-12 h-0.5 bg-accent mx-auto" aria-hidden="true" />
           </div>
@@ -244,8 +213,8 @@ export default function AProposPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Nos équipes"
-            title="Les Hommes et Femmes"
-            subtitle="Dix professionnels passionnés vous accueillent du mardi au samedi dans nos deux établissements."
+            title="L'équipe"
+            subtitle="Dix personnes vous accueillent du mardi au samedi, à Castelsarrasin et à Montauban."
             centered
           />
 
@@ -321,10 +290,10 @@ export default function AProposPage() {
       <section className="py-16 bg-brand-light text-center">
         <div className="max-w-xl mx-auto px-4">
           <h2 className="font-display font-bold text-3xl uppercase text-brand-dark mb-4">
-            Venez Nous Rencontrer
+            Passez nous voir
           </h2>
           <p className="text-brand-muted font-sans mb-8">
-            Du mardi au samedi dans nos deux établissements. Appelez-nous ou envoyez-nous un message.
+            On est ouverts du mardi au samedi dans nos deux garages. Vous pouvez aussi nous appeler ou nous écrire.
           </p>
           <Link
             href="/contact"

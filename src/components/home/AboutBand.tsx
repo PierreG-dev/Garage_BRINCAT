@@ -12,22 +12,23 @@ export default function AboutBand() {
               Notre histoire
             </p>
             <h2 className="font-display font-bold text-4xl lg:text-5xl uppercase text-white leading-tight mb-6">
-              Une Famille<br />Passionnée<br />Depuis 50 Ans
+              Une affaire<br />de famille depuis<br />plus de 50 ans
             </h2>
             <div className="w-12 h-0.5 bg-accent mb-8" aria-hidden="true" />
 
             <div className="space-y-4 text-white/70 font-sans text-base leading-relaxed">
               <p>
-                SARL BRINCAT est une entreprise familiale fondée il y a plus de 50 ans, qui s&apos;est
-                étendue au fil du temps pour devenir la référence automobile en Tarn-et-Garonne.
+                SARL BRINCAT, c&apos;est un garage familial créé il y a plus de 50 ans en
+                Tarn-et-Garonne. Il compte aujourd&apos;hui deux adresses, à Castelsarrasin et à
+                Montauban.
               </p>
               <p>
-                Durant toutes ces années, nous avons fièrement arboré le drapeau FIAT — une marque
-                qui encore aujourd&apos;hui nous fait confiance pour vous proposer le meilleur.
+                Depuis le début, on travaille avec FIAT, et la marque nous fait toujours confiance
+                aujourd&apos;hui. Mais on répare aussi toutes les autres marques.
               </p>
               <p>
-                Deux établissements, une équipe de 10 professionnels passionnés, et la même
-                ambition depuis toujours&nbsp;: vous accueillir comme il se doit.
+                On est dix au total, entre l&apos;accueil, l&apos;atelier et la vente, répartis sur
+                nos deux garages.
               </p>
             </div>
 
@@ -36,7 +37,7 @@ export default function AboutBand() {
                 href="/a-propos"
                 className="bg-accent hover:bg-accent-hover text-white font-sans font-medium text-sm uppercase tracking-wider px-6 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
               >
-                Découvrir notre histoire
+                Notre histoire
               </Link>
               <Link
                 href="/contact"

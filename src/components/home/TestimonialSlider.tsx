@@ -36,10 +36,10 @@ export default function TestimonialSlider() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="font-display text-xs uppercase tracking-widest text-accent mb-3">
-            Ce qu&apos;ils disent
+            Avis Google
           </p>
           <h2 className="font-display font-bold text-4xl lg:text-5xl uppercase text-white">
-            Avis Clients
+            Ce qu&apos;en disent nos clients
           </h2>
           <div className="mt-4 w-12 h-0.5 bg-accent mx-auto" aria-hidden="true" />
         </div>

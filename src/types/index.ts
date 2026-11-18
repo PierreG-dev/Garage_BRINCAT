@@ -8,6 +8,7 @@ export interface Location {
   email: string
   mapsUrl: string
   photo: string
+  geo: { latitude: number; longitude: number }
   hours: WeekHours
 }
 

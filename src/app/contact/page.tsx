@@ -1,65 +1,31 @@
 import type { Metadata } from 'next'
 import { LOCATIONS, CANONICAL_URL } from '@/lib/data'
+import { pageMetadata, breadcrumbJsonLd, locationId, ORGANIZATION_ID, WEBSITE_ID } from '@/lib/seo'
 import LocationCard from '@/components/contact/LocationCard'
 import ContactForm from '@/components/contact/ContactForm'
 import SectionHeading from '@/components/ui/SectionHeading'
 
-export const metadata: Metadata = {
-  title: 'Contact — Castelsarrasin & Montauban',
+export const metadata: Metadata = pageMetadata({
+  title: 'Contact et horaires à Castelsarrasin et Montauban',
+  socialTitle: 'Contacter le Garage BRINCAT à Castelsarrasin et Montauban',
   description:
-    'Contactez le Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou Montauban (05 63 66 29 61). Formulaire de contact, adresses et horaires d\'ouverture.',
-  alternates: { canonical: '/contact' },
-  openGraph: {
-    title: 'Contactez le Garage BRINCAT — Castelsarrasin & Montauban',
-    description:
-      'Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou Montauban (05 63 66 29 61). Formulaire de contact, adresses et horaires d\'ouverture.',
-    url: '/contact',
-    images: [
-      {
-        url: '/images/garage-castelsarrasin.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Garage BRINCAT — Contactez-nous à Castelsarrasin et Montauban',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Contactez le Garage BRINCAT — Castelsarrasin & Montauban',
-    description:
-      'Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou Montauban (05 63 66 29 61). Formulaire, adresses et horaires.',
-    images: ['/images/garage-castelsarrasin.jpg'],
-  },
-}
+    'Appelez le Garage BRINCAT à Castelsarrasin (05 63 32 33 78) ou à Montauban (05 63 66 29 61), ou écrivez-nous. Adresses, horaires d\'ouverture et formulaire de contact.',
+  path: '/contact',
+  image: '/images/og/contact.jpg',
+  imageAlt: 'Le Garage BRINCAT à Castelsarrasin',
+})
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Accueil', item: CANONICAL_URL },
-    { '@type': 'ListItem', position: 2, name: 'Contact', item: `${CANONICAL_URL}/contact` },
-  ],
-}
+const breadcrumb = breadcrumbJsonLd([{ name: 'Contact', path: '/contact' }])
 
 const contactPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contacter le Garage BRINCAT',
   url: `${CANONICAL_URL}/contact`,
-  mainEntity: {
-    '@type': 'AutoRepair',
-    name: 'Garage BRINCAT',
-    url: CANONICAL_URL,
-    telephone: '05 63 32 33 78',
-    email: 'sarlgaragebrincat@orange.fr',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '93 Avenue du Maréchal Leclerc',
-      addressLocality: 'Castelsarrasin',
-      postalCode: '82100',
-      addressCountry: 'FR',
-    },
-  },
+  inLanguage: 'fr-FR',
+  isPartOf: { '@id': WEBSITE_ID },
+  about: { '@id': ORGANIZATION_ID },
+  mainEntity: LOCATIONS.map((location) => ({ '@id': locationId(location) })),
 }
 
 export default function ContactPage() {
@@ -67,7 +33,7 @@ export default function ContactPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <script
         type="application/ld+json"
@@ -80,10 +46,10 @@ export default function ContactPage() {
             Garage BRINCAT
           </p>
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl uppercase text-white">
-            Nous Contacter
+            Nous contacter
           </h1>
           <p className="mt-4 text-white/60 font-sans text-base max-w-lg">
-            Une demande spécifique ? Laissez-nous un message et nous vous recontacterons dans les plus brefs délais.
+            Pour un devis ou un rendez-vous, appelez le garage le plus proche de chez vous ou laissez-nous un message.
           </p>
         </div>
       </section>
@@ -92,9 +58,9 @@ export default function ContactPage() {
       <section className="py-16 lg:py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Deux établissements"
-            title="Nos Garages"
-            subtitle="Retrouvez-nous à Castelsarrasin et Montauban, du mardi au samedi."
+            eyebrow="Deux adresses"
+            title="Nos garages"
+            subtitle="On vous accueille à Castelsarrasin et à Montauban, du mardi au samedi."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -115,12 +81,12 @@ export default function ContactPage() {
                 Formulaire de contact
               </p>
               <h2 className="font-display font-bold text-3xl lg:text-4xl uppercase text-white leading-tight mb-6">
-                Envoyez-nous<br />un Message
+                Envoyez-nous<br />un message
               </h2>
               <div className="w-10 h-0.5 bg-accent mb-8" aria-hidden="true" />
               <p className="text-white/60 font-sans text-base leading-relaxed mb-10">
-                Renseignez le formulaire ci-contre et nous vous recontacterons rapidement. Pour une
-                urgence, appelez-nous directement.
+                Remplissez le formulaire et on vous rappelle. Si c&apos;est urgent, le plus simple
+                reste de nous téléphoner.
               </p>
 
               {/* Quick contacts */}

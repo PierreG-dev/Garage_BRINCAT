@@ -2,9 +2,9 @@ import type { Location, Service, Testimonial, NavLink } from '@/types'
 
 export const COMPANY_NAME = 'SARL BRINCAT & BRINCAT fils'
 export const COMPANY_SHORT = 'Garage BRINCAT'
-export const COMPANY_TAGLINE = 'Votre expert automobile FIAT depuis plus de 50 ans'
+export const COMPANY_TAGLINE = 'Garage FIAT à Castelsarrasin et Montauban depuis plus de 50 ans'
 export const COMPANY_DESCRIPTION =
-  'Entreprise familiale fondée il y a plus de 50 ans, les Garages BRINCAT sont vos spécialistes FIAT à Castelsarrasin et Montauban. Réparation toutes marques, carrosserie, camping-car agréé.'
+  'Garage familial FIAT à Castelsarrasin et Montauban depuis plus de 50 ans. Mécanique et carrosserie toutes marques, entretien camping-car, dépannage et remorquage en Tarn-et-Garonne.'
 export const COMPANY_EMAIL = 'sarlgaragebrincat@orange.fr'
 export const CANONICAL_URL = 'https://www.sarlgaragebrincat.fr'
 
@@ -20,13 +20,14 @@ export const LOCATIONS: Location[] = [
     mapsUrl:
       'https://www.google.com/maps/dir//SARL+Garage+Brincat,+93+Avenue+du+Mar%C3%A9chal+Leclerc,+82100+Castelsarrasin',
     photo: '/images/garage-castelsarrasin.jpg',
+    geo: { latitude: 44.0387, longitude: 1.1067 },
     hours: {
       lundi: null,
-      mardi: '8h00 – 12h00 / 14h00 – 18h00',
-      mercredi: '8h00 – 12h00 / 14h00 – 18h00',
-      jeudi: '8h00 – 12h00 / 14h00 – 18h00',
-      vendredi: '8h00 – 12h00 / 14h00 – 18h00',
-      samedi: '8h00 – 12h00 / 14h00 – 17h00',
+      mardi: '8h00 - 12h00 / 14h00 - 18h00',
+      mercredi: '8h00 - 12h00 / 14h00 - 18h00',
+      jeudi: '8h00 - 12h00 / 14h00 - 18h00',
+      vendredi: '8h00 - 12h00 / 14h00 - 18h00',
+      samedi: '8h00 - 12h00 / 14h00 - 17h00',
       dimanche: null,
     },
   },
@@ -40,13 +41,14 @@ export const LOCATIONS: Location[] = [
     email: 'sarl.brincat@wanadoo.fr',
     mapsUrl: 'https://www.google.com/maps/dir//Garage+Brincat+Montauban',
     photo: '/images/garage-montauban.jpg',
+    geo: { latitude: 44.0069, longitude: 1.3556 },
     hours: {
       lundi: null,
-      mardi: '8h00 – 12h00 / 14h00 – 19h00',
-      mercredi: '8h00 – 12h00 / 14h00 – 19h00',
-      jeudi: '8h00 – 12h00 / 14h00 – 19h00',
-      vendredi: '8h00 – 12h00 / 14h00 – 19h00',
-      samedi: '8h00 – 12h00 / 14h00 – 18h00',
+      mardi: '8h00 - 12h00 / 14h00 - 19h00',
+      mercredi: '8h00 - 12h00 / 14h00 - 19h00',
+      jeudi: '8h00 - 12h00 / 14h00 - 19h00',
+      vendredi: '8h00 - 12h00 / 14h00 - 19h00',
+      samedi: '8h00 - 12h00 / 14h00 - 18h00',
       dimanche: null,
     },
   },
@@ -57,9 +59,9 @@ export const SERVICES: Service[] = [
     id: 'expertise',
     slug: 'expertise',
     title: 'Expertise',
-    shortDesc: 'Diagnostic précis de votre véhicule',
+    shortDesc: 'Diagnostic électronique toutes marques',
     longDesc:
-      "Grâce à notre équipement de diagnostic électronique certifié FIAT, nous identifions avec précision tout dysfonctionnement sur votre véhicule, toutes marques confondues. Un bilan complet avant achat ou après panne.",
+      "Voyant allumé, bruit anormal ou perte de puissance : on branche votre voiture sur notre valise de diagnostic certifiée FIAT pour trouver d'où vient le problème, quelle que soit la marque. On peut aussi faire un bilan complet avant l'achat d'une occasion.",
     image: '/images/service-expertise.jpg',
     icon: 'wrench',
   },
@@ -67,9 +69,9 @@ export const SERVICES: Service[] = [
     id: 'reparation',
     slug: 'reparation',
     title: 'Réparation',
-    shortDesc: 'Mécanique, carrosserie & peinture toutes marques',
+    shortDesc: 'Mécanique, carrosserie et peinture toutes marques',
     longDesc:
-      "Notre atelier prend en charge toutes les réparations mécaniques, la carrosserie et la peinture pour tous types de véhicules. Bris de glace, révision, distribution — nous intervenons sur toutes les marques avec le même niveau d'exigence.",
+      "Mécanique, carrosserie, peinture : l'atelier s'occupe de tout, sur toutes les marques. On remplace aussi les pare-brise et vitrages (bris de glace) et on fait les courroies de distribution. Vous n'avez pas besoin d'avoir une FIAT pour venir chez nous.",
     image: '/images/service-reparation.jpg',
     icon: 'car',
   },
@@ -79,7 +81,7 @@ export const SERVICES: Service[] = [
     title: 'Dépannage',
     shortDesc: 'Remorquage et assistance sur route',
     longDesc:
-      "Dépanneur conventionné par des groupes d'assistance, nous intervenons rapidement en cas de panne ou d'accident. Remorquage, assistance routière — nous sommes à votre écoute pour toute urgence.",
+      "Nous sommes dépanneur conventionné par plusieurs compagnies d'assistance. En cas de panne ou d'accident autour de Castelsarrasin et Montauban, appelez-nous : on vient chercher votre véhicule et on le remorque jusqu'à l'atelier.",
     image: '/images/service-depannage.jpg',
     icon: 'truck',
   },
@@ -87,9 +89,9 @@ export const SERVICES: Service[] = [
     id: 'revision',
     slug: 'revision',
     title: 'Révision',
-    shortDesc: "Entretien régulier pour rouler l'esprit tranquille",
+    shortDesc: 'Vidange, freins, pneus et entretien courant',
     longDesc:
-      "Vidanges, filtres, freins, pneumatiques — nous assurons l'entretien complet de votre véhicule selon les préconisations constructeur. Spécialistes camping-car, nous proposons aussi les révisions pré-voyage.",
+      "Vidange, filtres, freins, pneus : on fait l'entretien de votre véhicule en suivant le carnet du constructeur. Pour les camping-cars, on propose aussi une révision complète avant de partir en vacances.",
     image: '/images/service-revision.jpg',
     icon: 'check',
   },
@@ -97,9 +99,9 @@ export const SERVICES: Service[] = [
     id: 'vente',
     slug: 'vente',
     title: 'Vente véhicules',
-    shortDesc: 'Véhicules neufs et occasions FIAT',
+    shortDesc: 'FIAT neuves et occasions',
     longDesc:
-      "Concessionnaire FIAT, nous vous proposons une gamme complète de véhicules neufs et d'occasion. En concession ou sur commande, il y en a pour tous les budgets. Notre équipe vous accompagne dans votre choix.",
+      "En tant que concessionnaire FIAT, nous vendons des véhicules neufs et d'occasion. Si le modèle que vous cherchez n'est pas sur place, on peut le commander. Passez nous voir pour en parler ou faire un essai.",
     image: '/images/service-vente.jpg',
     icon: 'key',
   },
@@ -107,9 +109,9 @@ export const SERVICES: Service[] = [
     id: 'garantie',
     slug: 'garantie',
     title: 'Programme de garantie',
-    shortDesc: 'Achetez serein avec notre garantie',
+    shortDesc: 'Nos occasions sont garanties',
     longDesc:
-      "Tous nos véhicules d'occasion bénéficient d'un programme de garantie vous offrant la tranquillité d'esprit après votre achat. Nous nous engageons à votre satisfaction sur le long terme.",
+      "Toutes les occasions que nous vendons sont couvertes par une garantie. Si un problème survient après l'achat, vous savez à qui vous adresser : on reste votre garage après la vente.",
     image: '/images/service-garantie.jpg',
     icon: 'shield',
   },
@@ -154,9 +156,9 @@ export const TEAM_MEMBERS = [
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Accueil', href: '/' },
-  { label: 'Nos Services', href: '/services' },
-  { label: 'Camping-Car', href: '/camping-car' },
-  { label: 'À Propos', href: '/a-propos' },
+  { label: 'Nos services', href: '/services' },
+  { label: 'Camping-car', href: '/camping-car' },
+  { label: 'À propos', href: '/a-propos' },
   { label: 'Contact', href: '/contact' },
 ]
 
